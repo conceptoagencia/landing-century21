@@ -104,7 +104,7 @@
 <body class="bg-background selection:bg-primary/30">
     <!-- Header Section -->
     <header class="w-full flex justify-center items-center py-12 px-6">
-        <img alt="Liberty HomeLogo" class="w-auto object-contain h-8 md:h-14" data-alt="logo liberty home"
+        <img alt="Liberty HomeLogo" class="w-auto object-contain h-8 md:h-20" data-alt="logo liberty home"
             src="/img/logo_liberty_home.webp.png" />
     </header>
     <main class="max-w-screen-2xl mx-auto px-6 md:px-12">
@@ -141,51 +141,72 @@
         <!-- Infinite CTA Marquee -->
         <style>
             @keyframes scroll-left {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
             }
+
             .animate-scroll {
                 animation: scroll-left 35s linear infinite;
                 display: flex;
                 width: max-content;
             }
+
             .text-outline-gold {
                 color: transparent;
                 -webkit-text-stroke: 2px #beaf87;
             }
+
             @media (max-width: 768px) {
                 .text-outline-gold {
                     -webkit-text-stroke: 1px #beaf87;
                 }
             }
         </style>
-        <section class="w-[100vw] relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-24 overflow-hidden py-12 md:py-20 bg-surface-container-low/20 border-y border-[#beaf87]/10 z-10 select-none">
+        <section
+            class="w-[100vw] relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-24 overflow-hidden py-12 md:py-20 bg-surface-container-low/20 border-y border-[#beaf87]/10 z-10 select-none">
             <!-- Fade gradients for edges -->
-            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-64 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-64 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none"></div>
-            
+            <div
+                class="absolute left-0 top-0 bottom-0 w-16 md:w-64 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none">
+            </div>
+            <div
+                class="absolute right-0 top-0 bottom-0 w-16 md:w-64 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none">
+            </div>
+
             <div class="animate-scroll hover:[animation-play-state:paused]">
                 <!-- Group 1 -->
                 <div class="flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
-                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                    <h2
+                        class="text-3xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
                         Si estás listo para tomarte esto como un negocio
                     </h2>
-                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
-                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-outline-gold whitespace-nowrap opacity-80">
+                    <b
+                        class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2
+                        class="text-3xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
                         Completa el formulario y hablemos
                     </h2>
-                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
+                    <b
+                        class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
                 </div>
                 <!-- Group 2 -->
                 <div class="flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
-                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                    <h2
+                        class="text-3xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
                         Si estás listo para tomarte esto como un negocio
                     </h2>
-                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
-                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-outline-gold whitespace-nowrap opacity-80">
+                    <b
+                        class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2
+                        class="text-3xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
                         Completa el formulario y hablemos
                     </h2>
-                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
+                    <b
+                        class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
                 </div>
             </div>
         </section>
@@ -390,6 +411,277 @@
                 </form>
             </div>
         </section>
+        <!-- Our Values Slider & Bento Section -->
+        <section class="mb-32" id="ventajas">
+            <div class="bg-surface-container-low rounded-[2rem] p-8 md:p-20 overflow-hidden relative">
+                <!-- Section Header -->
+                <div class="mb-16 text-center">
+                    <b class="text-primary font-bold uppercase tracking-[0.3em] mb-4 block">POR QUÉ LIBERTY HOME</b>
+                    <h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white">LO QUE <b
+                            class="text-primary">NOS DIFERENCIA</b></h2>
+                </div>
+
+                <!-- Slider Wrapper -->
+                <div class="relative" id="slider-section">
+                    <!-- Slides Container -->
+                    <div class="overflow-hidden rounded-2xl" id="slides-container">
+                        <div class="flex transition-transform duration-700 ease-in-out" id="slides-track">
+
+                            <!-- Slide 1: Autoridad / Marca -->
+                            <div
+                                class="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center px-1 py-1">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-2xl flex-shrink-0">
+                                    <img alt="Century 21 branding luxury office environment with gold logo"
+                                        class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2s]"
+                                        src="/img/21.webp" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                        <div class="absolute bottom-6 left-6">
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-[0.3em] text-primary bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full">01
+                                                / 03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-6">
+                                    <div
+                                        class="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-full px-5 py-2">
+                                        <b class="material-symbols-outlined text-primary text-lg"
+                                            style="font-variation-settings:'FILL' 1;">verified</b>
+                                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Autoridad
+                                            de Marca</span>
+                                    </div>
+                                    <h3
+                                        class="font-headline text-3xl md:text-4xl font-extrabold text-white leading-tight">
+                                        Autoridad que Genera Cierres: <b class="text-primary">El Poder de la Marca</b>
+                                    </h3>
+                                    <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+                                        ¿Tu marca personal necesita un impulso? Muchos agentes luchan por ganar la
+                                        confianza de los propietarios. Al integrarte en nuestro equipo, dejas de
+                                        presentarte solo para hacerlo bajo el sello de <b class="text-white">CENTURY
+                                            21</b>, la red más reconocida y respetada a nivel global.
+                                    </p>
+                                    <p class="text-on-surface-variant leading-relaxed text-sm">
+                                        Ese respaldo te otorga una ventaja competitiva inmediata, permitiéndote captar
+                                        propiedades de alto standing y cerrar acuerdos con una credibilidad que a otros
+                                        les toma años construir.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Activos Bancarios -->
+                            <div
+                                class="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center px-1 py-1">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-2xl flex-shrink-0">
+                                    <img alt="Premium real estate portfolio investment banking financial district"
+                                        class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2s]"
+                                        src="/img/2.webp" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                        <div class="absolute bottom-6 left-6">
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-[0.3em] text-primary bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full">02
+                                                / 03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-6">
+                                    <div
+                                        class="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-full px-5 py-2">
+                                        <b class="material-symbols-outlined text-primary text-lg"
+                                            style="font-variation-settings:'FILL' 1;">domain</b>
+                                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Nicho
+                                            Exclusivo</span>
+                                    </div>
+                                    <h3
+                                        class="font-headline text-3xl md:text-4xl font-extrabold text-white leading-tight">
+                                        Diferenciación Real: <b class="text-primary">Activos Bancarios</b>
+                                    </h3>
+                                    <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+                                        ¿Cansado de competir por las mismas viviendas de siempre? En <b
+                                            class="text-white">Garfisan Valencia SL</b>, te sacamos de la guerra de
+                                        precios del mercado residencial común. Te formamos y damos acceso exclusivo a la
+                                        gestión de activos bancarios y portfolios de inversión.
+                                    </p>
+                                    <p class="text-on-surface-variant leading-relaxed text-sm">
+                                        Al dominar este nicho especializado, dejas de ser un vendedor para convertirte
+                                        en un <b class="text-white">asesor estratégico</b>, accediendo a operaciones de
+                                        mayor volumen y rentabilidad que el agente promedio ni siquiera llega a ver.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Infraestructura -->
+                            <div
+                                class="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center px-1 py-1">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-2xl flex-shrink-0">
+                                    <img alt="Modern tech-enabled real estate office with team support and digital tools"
+                                        class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2s]"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvI05J9i_g7-17DGN09JoNkBTxy8NCFhrsYlNblcXUUO4kRIDVL8_QDAikvd2_-j933IACCb2a1ZVIbR3-vUGgVsEe8d9JYysMivpo11WkHrOrdpJU3d8VXsRq5STsC7eD4OQmRBhrIrkMbqSt5u6L75wdIxCdbLx9ojQG0WRVDUSJiBNM1L7vytzjKpOKTD8TD5FSPnJ3uKusgLTJuokiiXhKXGjEb5xixqaZFUAvaHe6BFi0MmmxiN9_VJyAkek4-2FKud9MdE" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                        <div class="absolute bottom-6 left-6">
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-[0.3em] text-primary bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full">03
+                                                / 03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-6">
+                                    <div
+                                        class="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-full px-5 py-2">
+                                        <b class="material-symbols-outlined text-primary text-lg"
+                                            style="font-variation-settings:'FILL' 1;">rocket_launch</b>
+                                        <span
+                                            class="text-primary text-xs font-bold uppercase tracking-widest">Ecosistema
+                                            de Éxito</span>
+                                    </div>
+                                    <h3
+                                        class="font-headline text-3xl md:text-4xl font-extrabold text-white leading-tight">
+                                        Infraestructura de Éxito: <b class="text-primary">Tu Negocio, Sin Cargas</b>
+                                    </h3>
+                                    <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+                                        ¿Sientes que el papeleo te quita tiempo para vender? En <b
+                                            class="text-white">Liberty Home</b>, hemos diseñado un ecosistema de
+                                        innovación y excelencia donde tú eres el protagonista. Te proporcionamos
+                                        herramientas tecnológicas, asesoría legal y el apoyo de un equipo apasionado.
+                                    </p>
+                                    <p class="text-on-surface-variant leading-relaxed text-sm">
+                                        Nos encargamos del "ruido" operativo para que tú puedas enfocarte al <b
+                                            class="text-white">100% en lo que genera ingresos</b>: negociar y vender.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div><!-- end slides-track -->
+                    </div><!-- end slides-container -->
+
+                    <!-- Navigation Controls -->
+                    <div class="flex items-center justify-between mt-10">
+                        <!-- Dot indicators -->
+                        <div class="flex gap-3" id="slider-dots">
+                            <button id="dot-0" class="w-10 h-1 rounded-full bg-primary transition-all duration-300"
+                                aria-label="Slide 1"></button>
+                            <button id="dot-1" class="w-4 h-1 rounded-full bg-white/20 transition-all duration-300"
+                                aria-label="Slide 2"></button>
+                            <button id="dot-2" class="w-4 h-1 rounded-full bg-white/20 transition-all duration-300"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <!-- Arrow buttons -->
+                        <div class="flex gap-4">
+                            <button id="slider-prev"
+                                class="bg-surface-container-highest p-4 rounded-full text-primary hover:scale-110 hover:bg-primary hover:text-on-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+                                aria-label="Anterior">
+                                <b class="material-symbols-outlined">arrow_back</b>
+                            </button>
+                            <button id="slider-next"
+                                class="bg-primary text-on-primary p-4 rounded-full hover:scale-110 hover:brightness-110 transition-all duration-300 shadow-lg shadow-primary/20"
+                                aria-label="Siguiente">
+                                <b class="material-symbols-outlined">arrow_forward</b>
+                            </button>
+                        </div>
+                    </div>
+                </div><!-- end relative slider -->
+
+                <!-- The 4 Pillars Section -->
+                <div class="mt-24 pt-20 border-t border-white/5">
+                    <h3 class="font-headline text-3xl font-bold text-white text-center mb-16">LOS <b
+                            class="text-primary">4 PILARES</b> QUE HACEN CRECER TU NEGOCIO <br> EN LIBERTY HOME</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+
+                        <!-- Pilar 1: Sistema de Producción -->
+                        <div class="group bg-surface-container-highest/40 hover:bg-surface-container-highest border border-white/5 hover:border-primary/20 rounded-2xl p-8 transition-all duration-500 text-left">
+                            <div class="w-14 h-14 bg-surface-container-high rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
+                                <b class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">monitoring</b>
+                            </div>
+                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Sistema de Producción</h4>
+                            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-4">No improvisas. Ejecutas.</p>
+                            <p class="text-sm text-on-surface-variant/70 leading-relaxed">Trabajas con un método probado basado en datos, captación estratégica y cierre. Cada acción tiene un objetivo: generar operaciones y facturación.</p>
+                        </div>
+
+                        <!-- Pilar 2: Inversión en tu Negocio -->
+                        <div class="group bg-surface-container-highest/40 hover:bg-surface-container-highest border border-white/5 hover:border-primary/20 rounded-2xl p-8 transition-all duration-500 text-left">
+                            <div class="w-14 h-14 bg-surface-container-high rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
+                                <b class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">campaign</b>
+                            </div>
+                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Inversión en tu Negocio</h4>
+                            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-4">No empiezas solo. Empiezas con ventaja.</p>
+                            <p class="text-sm text-on-surface-variant/70 leading-relaxed">La agencia invierte en marketing, posicionamiento y visibilidad para acelerar tu crecimiento desde el primer momento.</p>
+                        </div>
+
+                        <!-- Pilar 3: Estructura y Soporte -->
+                        <div class="group bg-surface-container-highest/40 hover:bg-surface-container-highest border border-white/5 hover:border-primary/20 rounded-2xl p-8 transition-all duration-500 text-left">
+                            <div class="w-14 h-14 bg-surface-container-high rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
+                                <b class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">support_agent</b>
+                            </div>
+                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Estructura y Soporte</h4>
+                            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-4">Tú produces. Nosotros sostenemos.</p>
+                            <p class="text-sm text-on-surface-variant/70 leading-relaxed">Front office, back office, tecnología y procesos para que te centres en lo importante: captar, negociar y cerrar.</p>
+                        </div>
+
+                        <!-- Pilar 4: Entorno de Alto Rendimiento -->
+                        <div class="group bg-surface-container-highest/40 hover:bg-surface-container-highest border border-white/5 hover:border-primary/20 rounded-2xl p-8 transition-all duration-500 text-left">
+                            <div class="w-14 h-14 bg-surface-container-high rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
+                                <b class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">trending_up</b>
+                            </div>
+                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Entorno de Alto Rendimiento</h4>
+                            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-4">El nivel sube porque el entorno lo exige.</p>
+                            <p class="text-sm text-on-surface-variant/70 leading-relaxed">Estás rodeado de agentes productivos, métricas claras y una cultura donde el resultado importa.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+                (function () {
+                    const track = document.getElementById('slides-track');
+                    const dots = [
+                        document.getElementById('dot-0'),
+                        document.getElementById('dot-1'),
+                        document.getElementById('dot-2'),
+                    ];
+                    const prevBtn = document.getElementById('slider-prev');
+                    const nextBtn = document.getElementById('slider-next');
+                    const total = 3;
+                    let current = 0;
+
+                    function goTo(index) {
+                        current = (index + total) % total;
+                        track.style.transform = `translateX(-${current * 100}%)`;
+                        dots.forEach((d, i) => {
+                            d.classList.toggle('bg-primary', i === current);
+                            d.classList.toggle('w-10', i === current);
+                            d.classList.toggle('bg-white/20', i !== current);
+                            d.classList.toggle('w-4', i !== current);
+                        });
+                    }
+
+                    prevBtn.addEventListener('click', () => goTo(current - 1));
+                    nextBtn.addEventListener('click', () => goTo(current + 1));
+                    dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') goTo(current - 1);
+                        if (e.key === 'ArrowRight') goTo(current + 1);
+                    });
+
+                    // Touch / swipe support
+                    let startX = 0;
+                    const container = document.getElementById('slides-container');
+                    container.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+                    container.addEventListener('touchend', (e) => {
+                        const diff = startX - e.changedTouches[0].clientX;
+                        if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+                    }, { passive: true });
+
+                    goTo(0);
+                })();
+        </script>
         <!-- Testimonials Section -->
         <section class="mb-32">
             <div class="flex justify-between items-end mb-16">
@@ -467,99 +759,6 @@
                     </div>
                     <p class="text-on-surface-variant leading-relaxed italic">"Empezar de cero fue fácil gracias al
                         mentoring de los directores. La formación continua es el pilar de nuestro éxito diario."</p>
-                </div>
-            </div>
-        </section>
-        <!-- Our Values Slider & Bento Section -->
-        <section class="mb-32">
-            <div class="bg-surface-container-low rounded-[2rem] p-8 md:p-20 overflow-hidden relative">
-                <!-- Slide Header -->
-                <div class="mb-20 text-center">
-                    <b class="text-primary font-bold uppercase tracking-[0.3em] mb-4 block">RESPALDO DE LA RED Nº1
-                        DEL MUNDO.</b>
-                    <h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white">NUESTRO EQUIPO</h2>
-                </div>
-                <!-- Carousel Simulation (First Slide Visual) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div class="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-2xl">
-                        <img alt="Century 21 Office Reception" class="w-full h-full object-cover"
-                            data-alt="Sleek and modern Century 21 office reception with black walls and minimalist gold logo branding."
-                            src="https://lh3.googleusercontent.com/aida/ADBb0ujRtruihKL9I8XM4GEF-J1hU5G-MbQkEKByn3tpKfM_ZecadOUMPRAv093dbanUv-kFqNdBgGGjBB0Ue4QDemLE0Ti7XuG3MwDKtNNPgNOBV-_de8tjQD3cXnPRom6tAFKUOUBz7v3qXHhQWhHjmR23lB-wf-KvxymRgvU2Y9AxEPNsuluRCFSGvesiaJUSK6cGGOkLDoZ2Kydm9bt0mfDFgLjsZWuMFuIkPKH6GViFK29AOcDNJFUokaFNOBcQ2GoDDnq1pCzPFg" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-10">
-                            <div class="flex gap-2">
-                                <div class="w-12 h-1 bg-primary"></div>
-                                <div class="w-12 h-1 bg-white/20"></div>
-                                <div class="w-12 h-1 bg-white/20"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="font-headline text-3xl font-bold text-primary mb-6">Lo que nos diferencia</h3>
-                            <p class="text-on-surface-variant text-xl leading-loose">
-                                Iconic and rebellious, redefining real estate. No seguimos tendencias, las creamos. En
-                                Liberty Home Valencia transformamos la intermediación en una experiencia de arte y
-                                arquitectura.
-                            </p>
-                        </div>
-                        <div class="flex gap-4">
-                            <button
-                                class="bg-surface-container-highest p-4 rounded-full text-primary hover:scale-110 transition-transform">
-                                <b class="material-symbols-outlined">arrow_back</b>
-                            </button>
-                            <button
-                                class="bg-primary text-on-primary p-4 rounded-full hover:scale-110 transition-transform shadow-lg shadow-primary/20">
-                                <b class="material-symbols-outlined">arrow_forward</b>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- The 4 Ds Section (Final Slide Logic) -->
-                <div class="mt-32 pt-20 border-t border-white/5">
-                    <h3 class="font-headline text-3xl font-bold text-white text-center mb-16">LOS <b
-                            class="text-primary">4 PILARES</b> QUE NOS DIFERENCIAN</h3>
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-                        <div class="text-center group">
-                            <div
-                                class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <b
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">square_foot</b>
-                            </div>
-                            <h4 class="font-headline font-bold text-xl text-white mb-2">Dimensión</h4>
-                            <p class="text-sm text-on-surface-variant/70 px-4">Alcance global con enfoque local
-                                estratégico.</p>
-                        </div>
-                        <div class="text-center group">
-                            <div
-                                class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <b
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">bolt</b>
-                            </div>
-                            <h4 class="font-headline font-bold text-xl text-white mb-2">Dinamismo</h4>
-                            <p class="text-sm text-on-surface-variant/70 px-4">Agilidad en el cierre y marketing
-                                disruptivo.</p>
-                        </div>
-                        <div class="text-center group">
-                            <div
-                                class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <b
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">verified_user</b>
-                            </div>
-                            <h4 class="font-headline font-bold text-xl text-white mb-2">Diferenciación</h4>
-                            <p class="text-sm text-on-surface-variant/70 px-4">Propuestas de valor únicas para cada
-                                cliente.</p>
-                        </div>
-                        <div class="text-center group">
-                            <div
-                                class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <b
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">favorite</b>
-                            </div>
-                            <h4 class="font-headline font-bold text-xl text-white mb-2">Devoción</h4>
-                            <p class="text-sm text-on-surface-variant/70 px-4">Pasión absoluta por los sueños de
-                                nuestros clientes.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
