@@ -114,8 +114,8 @@
                 class="absolute inset-0 group-hover:bg-black/10 transition-all duration-700 flex items-center justify-center z-10 hero-gradient">
                 <button
                     class="w-24 h-24 rounded-full flex items-center justify-center backdrop-blur-[2px] hover:scale-110 transition-transform active:scale-95">
-                    <span class="material-symbols-outlined text-primary text-6xl md:text-7xl"
-                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    <b class="material-symbols-outlined text-primary text-6xl md:text-7xl"
+                        style="font-variation-settings: 'FILL' 1;">play_arrow</b>
                 </button>
             </div>
             <img alt="Valencia Cityscape"
@@ -128,13 +128,64 @@
                     <div class="space-y-4 md:space-y-6 flex flex-col items-center">
                         <h1
                             class="font-headline md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] uppercase text-xl">
-                            Deja de buscar clientes y empieza a <span class="text-[#beaf87]">cerrar ventas</span>.
+                            Deja de buscar clientes y empieza a <b class="text-[#beaf87]">cerrar ventas</b>.
                         </h1>
                         <p
                             class="font-headline text-xs md:text-sm lg:text-2xl font-bold tracking-tight text-[#252526] bg-white/80 backdrop-blur-md px-6 py-2 rounded-full inline-block mx-auto text-center">
-                            Te damos la <span class="bg-[#252526] px-2 py-0.5 rounded text-primary">tecnología</span>,
+                            Te damos la <b class="bg-[#252526] px-2 py-0.5 rounded text-primary">tecnología</b>,
                             tú pones el talento.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- Infinite CTA Marquee -->
+        <style>
+            @keyframes scroll-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            .animate-scroll {
+                animation: scroll-left 35s linear infinite;
+                display: flex;
+                width: max-content;
+            }
+            .text-outline-gold {
+                color: transparent;
+                -webkit-text-stroke: 2px #beaf87;
+            }
+            @media (max-width: 768px) {
+                .text-outline-gold {
+                    -webkit-text-stroke: 1px #beaf87;
+                }
+            }
+        </style>
+        <section class="w-[100vw] relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-24 overflow-hidden py-12 md:py-20 bg-surface-container-low/20 border-y border-[#beaf87]/10 z-10 select-none">
+            <!-- Fade gradients for edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-64 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-64 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none"></div>
+            
+            <div class="animate-scroll hover:[animation-play-state:paused]">
+                <!-- Group 1 -->
+                <div class="flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
+                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                        Si estás listo para tomarte esto como un negocio
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
+                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-outline-gold whitespace-nowrap opacity-80">
+                        Completa el formulario y hablemos
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
+                </div>
+                <!-- Group 2 -->
+                <div class="flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
+                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                        Si estás listo para tomarte esto como un negocio
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
+                    <h2 class="text-5xl md:text-7xl lg:text-[6rem] font-headline font-extrabold uppercase tracking-tighter text-outline-gold whitespace-nowrap opacity-80">
+                        Completa el formulario y hablemos
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
                 </div>
             </div>
         </section>
@@ -145,7 +196,7 @@
                     SIGUIENTE FORMULARIO Y...</p>
                 <h2 style="margin: -5px 0 -20px 0;"
                     class="font-headline uppercase text-4xl md:text-6xl font-extrabold text-primary leading-tight tracking-tight">
-                    Accede a un modelo de negocio <br> <span class="text-[#ffffff]">inmobiliario real</span>
+                    Accede a un modelo de negocio <br> <b class="text-[#ffffff]">inmobiliario real</b>
                 </h2>
                 <p class="text-on-surface-variant leading-relaxed text-sm">No estás aplicando a un trabajo.<br>
                     Estás entrando en un sistema diseñado para producir, escalar y generar ingresos de verdad.</p>
@@ -154,94 +205,185 @@
                 <div class="space-y-8">
                     <div class="flex items-start gap-6">
                         <div class="bg-surface-container-high p-4 rounded-xl">
-                            <span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+                            <b class="material-symbols-outlined text-primary text-3xl">monitoring</b>
                         </div>
                         <div>
                             <h3 class="font-headline text-xl font-bold text-white mb-2">Sistema de Alto Rendimiento</h3>
-                            <p class="text-on-surface-variant leading-relaxed">Trabajarás con un método probado basado en datos, estructura y ejecución. Cada acción tiene un objetivo: generar negocio, cerrar operaciones y aumentar tu facturación.</p>
+                            <p class="text-on-surface-variant leading-relaxed">Trabajarás con un método probado basado
+                                en datos, estructura y ejecución. Cada acción tiene un objetivo: generar negocio, cerrar
+                                operaciones y aumentar tu facturación.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-6">
                         <div class="bg-surface-container-high p-4 rounded-xl">
-                            <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+                            <b class="material-symbols-outlined text-primary text-3xl">domain</b>
                         </div>
                         <div>
-                            <h3 class="font-headline text-xl font-bold text-white mb-2">Construcción de Negocio Propio</h3>
-                            <p class="text-on-surface-variant leading-relaxed">Aquí no eres un empleado. Construyes tu cartera, tu posicionamiento en zona y un negocio que crece contigo. Cuanto mejor ejecutas el sistema, mayor es tu crecimiento.</p>
+                            <h3 class="font-headline text-xl font-bold text-white mb-2">Construcción de Negocio Propio
+                            </h3>
+                            <p class="text-on-surface-variant leading-relaxed">Aquí no eres un empleado. Construyes tu
+                                cartera, tu posicionamiento en zona y un negocio que crece contigo. Cuanto mejor
+                                ejecutas el sistema, mayor es tu crecimiento.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-6">
                         <div class="bg-surface-container-high p-4 rounded-xl">
-                            <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+                            <b class="material-symbols-outlined text-primary text-3xl">trending_up</b>
                         </div>
                         <div>
-                            <h3 class="font-headline text-xl font-bold text-white mb-2">Ingresos Escalables y Reales</h3>
-                            <p class="text-on-surface-variant leading-relaxed">No hablamos de comisiones "competitivas". Hablamos de un modelo que te permite generar ingresos predecibles y crecientes en función de tu rendimiento.</p>
+                            <h3 class="font-headline text-xl font-bold text-white mb-2">Ingresos Escalables y Reales
+                            </h3>
+                            <p class="text-on-surface-variant leading-relaxed">No hablamos de comisiones "competitivas".
+                                Hablamos de un modelo que te permite generar ingresos predecibles y crecientes en
+                                función de tu rendimiento.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-6">
                         <div class="bg-surface-container-high p-4 rounded-xl">
-                            <span class="material-symbols-outlined text-primary text-3xl">campaign</span>
+                            <b class="material-symbols-outlined text-primary text-3xl">campaign</b>
                         </div>
                         <div>
-                            <h3 class="font-headline text-xl font-bold text-white mb-2">Inversión, Marketing y Soporte Real</h3>
-                            <p class="text-on-surface-variant leading-relaxed">La agencia invierte contigo: visibilidad, posicionamiento, marketing y estructura operativa. Tú te centras en producir. Nosotros en multiplicar tu impacto.</p>
+                            <h3 class="font-headline text-xl font-bold text-white mb-2">Inversión, Marketing y Soporte
+                                Real</h3>
+                            <p class="text-on-surface-variant leading-relaxed">La agencia invierte contigo: visibilidad,
+                                posicionamiento, marketing y estructura operativa. Tú te centras en producir. Nosotros
+                                en multiplicar tu impacto.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bg-surface-container-low p-8 md:p-12 rounded-2xl border border-white/5 shadow-2xl">
                 <form class="space-y-6">
-                    <div class="space-y-2">
-                        <label
-                            class="block text-sm font-medium text-on-surface-variant/80 uppercase tracking-widest">Nombre
-                            Completo</label>
-                        <input
-                            class="w-full bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary text-white py-4 px-6"
-                            placeholder="Tu nombre" type="text" />
+
+
+                    <!-- Nombre y apellidos -->
+                    <div class="space-y-1.5">
+                        <label for="full-name"
+                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">Nombre
+                            y apellidos</label>
+                        <input id="full-name" name="full_name" type="text" required
+                            class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                            placeholder="Tu nombre completo" />
                     </div>
-                    <div class="space-y-2">
-                        <label
-                            class="block text-sm font-medium text-on-surface-variant/80 uppercase tracking-widest">¿Cuánto
-                            tiempo llevas activo en el rubro inmobiliario o comercial?</label>
-                        <input
-                            class="w-full bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary text-white py-4 px-6"
-                            placeholder="Tu experiencia..." type="text" />
-                    </div>
-                    <div class="space-y-2">
-                        <label
-                            class="block text-sm font-medium text-on-surface-variant/80 uppercase tracking-widest">¿Estás
-                            dispuesto a invertir en tu emprendimiento?</label>
-                        <input
-                            class="w-full bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary text-white py-4 px-6"
-                            placeholder="Sí/No..." type="text" />
-                    </div>
-                    <div class="space-y-2">
-                        <label
-                            class="block text-sm font-medium text-on-surface-variant/80 uppercase tracking-widest">¿Qué
-                            tiempo dispones para trabajar con nosotros?</label>
-                        <input
-                            class="w-full bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary text-white py-4 px-6"
-                            placeholder="Tu disponibilidad..." type="text" />
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label
-                                class="block text-sm font-medium text-on-surface-variant/80 uppercase tracking-widest">Email</label>
-                            <input
-                                class="w-full bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary text-white py-4 px-6"
-                                placeholder="email@ejemplo.com" type="email" />
-                        </div>
-                        <div class="space-y-2">
-                            <label
-                                class="block text-sm font-medium text-on-surface-variant/80 uppercase tracking-widest">Teléfono</label>
-                            <input
-                                class="w-full bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary text-white py-4 px-6"
-                                placeholder="+34 000 000 000" type="tel" />
+
+                    <!-- Experiencia -->
+                    <div class="space-y-1.5">
+                        <label for="experiencia"
+                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Cuál
+                            es tu experiencia en ventas o sector inmobiliario?</label>
+                        <div class="relative">
+                            <select id="experiencia" name="experiencia" required
+                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
+                                <option value="" disabled selected class="text-on-surface-variant/40">Selecciona una
+                                    opción</option>
+                                <option value="sin-experiencia">Sin experiencia previa</option>
+                                <option value="menos-1">Menos de 1 año</option>
+                                <option value="1-3">Entre 1 y 3 años</option>
+                                <option value="3-5">Entre 3 y 5 años</option>
+                                <option value="mas-5">Más de 5 años</option>
+                            </select>
+                            <b
+                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
                         </div>
                     </div>
+
+                    <!-- Inversión -->
+                    <div class="space-y-1.5">
+                        <label for="inversion"
+                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Estás
+                            dispuesto a invertir en tu negocio para crecer más rápido?</label>
+                        <div class="relative">
+                            <select id="inversion" name="inversion" required
+                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="si-decidido">Sí, estoy decidido a invertir</option>
+                                <option value="si-segun">Sí, según el plan de negocio</option>
+                                <option value="no-seguro">No estoy seguro todavía</option>
+                                <option value="no">No por ahora</option>
+                            </select>
+                            <b
+                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
+                        </div>
+                    </div>
+
+                    <!-- Dedicación -->
+                    <div class="space-y-1.5">
+                        <label for="dedicacion"
+                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Cuál
+                            es tu nivel de dedicación previsto?</label>
+                        <div class="relative">
+                            <select id="dedicacion" name="dedicacion" required
+                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="tiempo-completo">Tiempo completo (40+ h/semana)</option>
+                                <option value="media-jornada">Media jornada (20–30 h/semana)</option>
+                                <option value="parcial">Parcial (10–20 h/semana)</option>
+                                <option value="inicio">Empezando a explorar (&lt;10 h/semana)</option>
+                            </select>
+                            <b
+                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
+                        </div>
+                    </div>
+
+                    <!-- Motivación -->
+                    <div class="space-y-1.5">
+                        <label for="motivacion"
+                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Qué
+                            estás buscando realmente en este momento?</label>
+                        <div class="relative">
+                            <select id="motivacion" name="motivacion" required
+                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="independencia">Independencia económica y profesional</option>
+                                <option value="ingresos-extra">Generar ingresos extra</option>
+                                <option value="cambio-sector">Cambiar de sector y empezar de nuevo</option>
+                                <option value="crecer">Crecer dentro del sector inmobiliario</option>
+                                <option value="emprender">Emprender con respaldo de una marca</option>
+                            </select>
+                            <b
+                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
+                        </div>
+                    </div>
+
+                    <!-- Objetivo de ingresos (opcional) -->
+                    <div class="space-y-1.5">
+                        <label for="objetivo-ingresos"
+                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest leading-snug">
+                            ¿Qué objetivo de ingresos te gustaría alcanzar en 12 meses?
+                            <b class="ml-1 normal-case text-on-surface-variant/50 tracking-normal font-normal">(opcional,
+                                recomendado)</b>
+                        </label>
+                        <input id="objetivo-ingresos" name="objetivo_ingresos" type="text"
+                            class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                            placeholder="Ej: 40.000 €, 60.000 €..." />
+                    </div>
+
+                    <!-- Email y Teléfono -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-1.5">
+                            <label for="email"
+                                class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">Email
+                                profesional</label>
+                            <input id="email" name="email" type="email" required
+                                class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                                placeholder="email@ejemplo.com" />
+                        </div>
+                        <div class="space-y-1.5">
+                            <label for="telefono"
+                                class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest leading-snug">
+                                Teléfono
+                                <b class="ml-0.5 normal-case text-on-surface-variant/50 tracking-normal font-normal">(WhatsApp
+                                    preferente)</b>
+                            </label>
+                            <input id="telefono" name="telefono" type="tel" required
+                                class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                                placeholder="+34 000 000 000" />
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
                     <button
-                        class="w-full gold-button-gradient text-on-primary font-headline font-extrabold text-lg py-5 rounded-xl uppercase tracking-widest shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 transform active:scale-[0.98]"
+                        class="w-full gold-button-gradient text-on-primary font-headline font-extrabold text-base py-4 rounded-xl uppercase tracking-widest shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:brightness-110 transition-all duration-300 transform active:scale-[0.98] mt-auto"
                         type="submit">
                         ENVIAR SOLICITUD
                     </button>
@@ -251,24 +393,24 @@
         <!-- Testimonials Section -->
         <section class="mb-32">
             <div class="flex justify-between items-end mb-16">
-                <h2 class="font-headline text-3xl md:text-5xl font-bold text-white max-w-xl"><span
-                        class="text-[#beaf87]">HISTORIAS DE ÉXITO</span> EN LIBERTY HOME</h2>
+                <h2 class="font-headline text-3xl md:text-5xl font-bold text-white max-w-xl"><b
+                        class="text-[#beaf87]">HISTORIAS DE ÉXITO</b> EN LIBERTY HOME</h2>
                 <div class="hidden md:flex gap-4">
                     <button
                         class="p-3 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-colors">
-                        <span class="material-symbols-outlined">chevron_left</span>
+                        <b class="material-symbols-outlined">chevron_left</b>
                     </button>
                     <button
                         class="p-3 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-colors">
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <b class="material-symbols-outlined">chevron_right</b>
                     </button>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
                 <div class="bg-surface-container p-8 rounded-2xl relative">
-                    <span
-                        class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-8">format_quote</span>
+                    <b
+                        class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-8">format_quote</b>
                     <div class="flex items-center gap-4 mb-6">
                         <img class="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all"
                             data-alt="Professional portrait of a male real estate agent in a suit with a confident expression"
@@ -276,8 +418,8 @@
                         <div>
                             <div class="flex items-center gap-2">
                                 <h4 class="font-bold text-white">Carlos Mendoza</h4>
-                                <span class="material-symbols-outlined text-primary text-sm"
-                                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <b class="material-symbols-outlined text-primary text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">verified</b>
                             </div>
                             <p class="text-xs text-on-surface-variant uppercase tracking-widest">Senior Advisor</p>
                         </div>
@@ -288,8 +430,8 @@
                 </div>
                 <!-- Testimonial 2 -->
                 <div class="bg-surface-container p-8 rounded-2xl relative">
-                    <span
-                        class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-8">format_quote</span>
+                    <b
+                        class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-8">format_quote</b>
                     <div class="flex items-center gap-4 mb-6">
                         <img class="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all"
                             data-alt="Close up of a professional woman smiling in a modern office setting"
@@ -297,8 +439,8 @@
                         <div>
                             <div class="flex items-center gap-2">
                                 <h4 class="font-bold text-white">Elena Garrido</h4>
-                                <span class="material-symbols-outlined text-primary text-sm"
-                                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <b class="material-symbols-outlined text-primary text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">verified</b>
                             </div>
                             <p class="text-xs text-on-surface-variant uppercase tracking-widest">Luxury Expert</p>
                         </div>
@@ -308,8 +450,8 @@
                 </div>
                 <!-- Testimonial 3 -->
                 <div class="bg-surface-container p-8 rounded-2xl relative">
-                    <span
-                        class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-8">format_quote</span>
+                    <b
+                        class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-8">format_quote</b>
                     <div class="flex items-center gap-4 mb-6">
                         <img class="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all"
                             data-alt="Portrait of a young male professional agent looking optimistic in a bright interior"
@@ -317,8 +459,8 @@
                         <div>
                             <div class="flex items-center gap-2">
                                 <h4 class="font-bold text-white">David Sancho</h4>
-                                <span class="material-symbols-outlined text-primary text-sm"
-                                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <b class="material-symbols-outlined text-primary text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">verified</b>
                             </div>
                             <p class="text-xs text-on-surface-variant uppercase tracking-widest">New Talent</p>
                         </div>
@@ -333,8 +475,8 @@
             <div class="bg-surface-container-low rounded-[2rem] p-8 md:p-20 overflow-hidden relative">
                 <!-- Slide Header -->
                 <div class="mb-20 text-center">
-                    <span class="text-primary font-bold uppercase tracking-[0.3em] mb-4 block">RESPALDO DE LA RED Nº1
-                        DEL MUNDO.</span>
+                    <b class="text-primary font-bold uppercase tracking-[0.3em] mb-4 block">RESPALDO DE LA RED Nº1
+                        DEL MUNDO.</b>
                     <h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white">NUESTRO EQUIPO</h2>
                 </div>
                 <!-- Carousel Simulation (First Slide Visual) -->
@@ -363,25 +505,25 @@
                         <div class="flex gap-4">
                             <button
                                 class="bg-surface-container-highest p-4 rounded-full text-primary hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined">arrow_back</span>
+                                <b class="material-symbols-outlined">arrow_back</b>
                             </button>
                             <button
                                 class="bg-primary text-on-primary p-4 rounded-full hover:scale-110 transition-transform shadow-lg shadow-primary/20">
-                                <span class="material-symbols-outlined">arrow_forward</span>
+                                <b class="material-symbols-outlined">arrow_forward</b>
                             </button>
                         </div>
                     </div>
                 </div>
                 <!-- The 4 Ds Section (Final Slide Logic) -->
                 <div class="mt-32 pt-20 border-t border-white/5">
-                    <h3 class="font-headline text-3xl font-bold text-white text-center mb-16">LOS <span
-                            class="text-primary">4 PILARES</span> QUE NOS DIFERENCIAN</h3>
+                    <h3 class="font-headline text-3xl font-bold text-white text-center mb-16">LOS <b
+                            class="text-primary">4 PILARES</b> QUE NOS DIFERENCIAN</h3>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                         <div class="text-center group">
                             <div
                                 class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <span
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">square_foot</span>
+                                <b
+                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">square_foot</b>
                             </div>
                             <h4 class="font-headline font-bold text-xl text-white mb-2">Dimensión</h4>
                             <p class="text-sm text-on-surface-variant/70 px-4">Alcance global con enfoque local
@@ -390,8 +532,8 @@
                         <div class="text-center group">
                             <div
                                 class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <span
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">bolt</span>
+                                <b
+                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">bolt</b>
                             </div>
                             <h4 class="font-headline font-bold text-xl text-white mb-2">Dinamismo</h4>
                             <p class="text-sm text-on-surface-variant/70 px-4">Agilidad en el cierre y marketing
@@ -400,8 +542,8 @@
                         <div class="text-center group">
                             <div
                                 class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <span
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">verified_user</span>
+                                <b
+                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">verified_user</b>
                             </div>
                             <h4 class="font-headline font-bold text-xl text-white mb-2">Diferenciación</h4>
                             <p class="text-sm text-on-surface-variant/70 px-4">Propuestas de valor únicas para cada
@@ -410,8 +552,8 @@
                         <div class="text-center group">
                             <div
                                 class="w-20 h-20 mx-auto bg-surface-container-highest rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                                <span
-                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">favorite</span>
+                                <b
+                                    class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary">favorite</b>
                             </div>
                             <h4 class="font-headline font-bold text-xl text-white mb-2">Devoción</h4>
                             <p class="text-sm text-on-surface-variant/70 px-4">Pasión absoluta por los sueños de
