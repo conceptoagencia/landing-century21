@@ -1,0 +1,6 @@
+# Ignorar vídeos pesados (se mantienen solo en local)
+landing.mp4
+*.mp4
+*.mov
+*.avi
+*.mkv

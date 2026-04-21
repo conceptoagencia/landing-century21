@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Century 21 Liberty Home | Únete al Élite en Valencia</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
@@ -113,38 +114,234 @@
     <!-- Header Section -->
     <header class="w-full flex justify-center items-center py-12 px-6">
         <img alt="Liberty HomeLogo" class="w-auto object-contain h-14 md:h-20 " data-alt="logo liberty home"
-            src="/img/logo_liberty_home.webp.png" />
+            src="img/logo_liberty_home.webp.png" />
     </header>
+    <div class="w-full flex flex-col items-center text-center px-10 md:px-24 pb-10 gap-4">
+        <h1 class="font-headline md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white uppercase text-[20px]">
+            Deja de buscar clientes y <br> empieza a <b class="text-[#beaf87]">cerrar ventas</b>
+        </h1>
+        <p class="font-headline text-[10px] md:text-sm lg:text-2xl font-bold tracking-tight text-[#252526] bg-white/80 backdrop-blur-md px-5 py-2 inline-block" style="border-radius:999px;">
+            Te damos la <b class="bg-[#252526] px-2 py-0.5 text-primary" style="border-radius:4px;">tecnología</b>,
+            tú pones el talento.
+        </p>
+    </div>
     <main class="max-w-screen-2xl mx-auto px-6 md:px-12">
         <!-- Hero Video Section -->
-        <section class="relative mb-14 overflow-hidden rounded-2xl w-full group aspect-[4/5] md:aspect-video">
-            <div
-                class="absolute inset-0 group-hover:bg-black/10 transition-all duration-700 flex items-center justify-center z-10 hero-gradient">
-                <button
-                    class="w-24 h-24 rounded-full flex items-center justify-center backdrop-blur-[2px] hover:scale-110 transition-transform active:scale-95">
-                    <b class="material-symbols-outlined text-primary text-6xl md:text-7xl"
-                        style="font-variation-settings: 'FILL' 1;">play_arrow</b>
-                </button>
+        <section class="relative mb-14 overflow-hidden rounded-2xl w-full aspect-[4/5] md:aspect-video bg-black">
+
+            <!-- Imagen de fondo (poster) -->
+            <div id="hero-poster"
+                class="absolute inset-0 z-10"
+                style="transition: opacity 0.7s;">
+                <img src="img/equipo2.webp" alt="" class="w-full h-full object-cover" />
             </div>
-            <img alt="Valencia Cityscape"
-                class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2s]"
-                data-alt="Panoramic aerial wide view of Valencia Spain architecture and cityscape during golden hour with warm sunlight hitting historic buildings"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbKp9aifDx5ncdsfHE3LqVf0dDgc9zpwikB3MDUH3U8MruO7_5TGe4f292RB-bisAJYMwHRJLn1In9spENEIARmuOvEEdi09zndJXwB9CvBqtN7Eh-4sMzKzybfrfa9AXQRc5mt2rZHyLncEXRqslsmjki4Cr0mIIpj3Yt3IfonAsZvEKE8OdZu9JUywC2a2cZe-P3lr8x36M9SxhMg7LSqRt1K2qicLFHEEWwDTP0KLBxuHTVE0DKkbTLnNBqEw7Vfz6Upgojhs" />
-            <div
-                class="absolute inset-0 flex items-center justify-center p-0 md:p-16 z-20 backdrop-blur-[2px] bg-black/20 text-center">
-                <div class="w-full flex flex-col items-center">
-                    <div class="space-y-4 md:space-y-6 flex flex-col items-center">
-                        <h1
-                            class="font-headline md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] uppercase text-[20px]">
-                            Deja de buscar clientes y <br> empieza a <b class="text-[#beaf87]">cerrar ventas</b>
-                        </h1>
-                        <p
-                            class="font-headline text-[10px] md:text-sm lg:text-2xl font-bold tracking-tight text-[#252526] bg-white/80 backdrop-blur-md px-[8px] py-2 rounded-full inline-block mx-auto text-center">
-                            Te damos la <b class="bg-[#252526] px-2 py-0.5 rounded text-primary">tecnología</b>,
-                            tú pones el talento.</p>
+
+            <!-- Vídeo (sin loop) -->
+            <video
+                id="hero-video"
+                class="w-full h-full object-cover opacity-0"
+                src="landing.mp4"
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                style="transition: opacity 0.7s;">
+            </video>
+
+            <!-- Overlay play (visible cuando está pausado) -->
+            <div id="play-overlay"
+                class="absolute inset-0 z-20 flex flex-col items-center justify-center gap-8 cursor-pointer"
+                style="background: rgba(0,0,0,0.55); transition: opacity 0.4s; opacity:1; pointer-events:auto;">
+
+                <!-- Texto gancho -->
+                <div class="text-center px-6 flex flex-col items-center gap-3">
+                    <p class="font-headline text-[11px] md:text-base lg:text-xl font-bold tracking-tight text-[#252526] bg-white/90 backdrop-blur-md px-4 py-2 inline-block"
+                        style="border-radius:999px;">
+                        ¿Seguís cerrando a puro esfuerzo? <br class="sm:hidden"><b class="bg-[#252526] px-2 py-0.5 text-[#dacaa1]" style="border-radius:4px;">Dale play</b>
+                    </p>
+                </div>
+
+                <!-- Botón play grande -->
+                <div class="flex flex-col items-center gap-4">
+                    <div class="relative flex items-center justify-center play-btn-wrap" id="play-btn-wrap"
+                        style="width:120px;height:120px;">
+                        <!-- Anillo exterior con pulso -->
+                        <div id="play-pulse" class="absolute inset-0" style="border-radius:50%; border:2px solid rgba(218,202,161,0.25); animation: playPulse 2s ease-in-out infinite;"></div>
+                        <!-- Anillo base -->
+                        <div class="absolute inset-0" style="border-radius:50%; border:2px solid rgba(218,202,161,0.5);"></div>
+                        <!-- Fondo semitransparente -->
+                        <div id="play-bg" class="absolute inset-0" style="border-radius:50%; background:rgba(218,202,161,0.1); transition: background 0.3s;"></div>
+                        <b class="material-symbols-outlined text-[#dacaa1] relative z-10 play-btn-icon"
+                            style="font-size:64px; font-variation-settings:'FILL' 1;">play_arrow</b>
                     </div>
+                    <span id="play-label" class="text-[#dacaa1] text-xs font-bold uppercase tracking-[0.3em]">Reproducir vídeo</span>
                 </div>
             </div>
+
+            <!-- Controles inferiores (aparecen tras el primer play) -->
+            <div id="video-controls" class="absolute bottom-3 left-3 md:bottom-4 md:left-4 z-30 items-center gap-2 md:gap-3" style="display:none;">
+                <button id="playpause-btn"
+                    class="flex items-center gap-1 md:gap-2 px-2 py-1 md:px-4 md:py-2 text-xs md:text-sm font-bold uppercase tracking-widest"
+                    style="border-radius:999px; background:rgba(0,0,0,0.7); color:#dacaa1; border:1px solid rgba(218,202,161,0.4); transition: background 0.2s, color 0.2s;">
+                    <b id="playpause-icon" class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings:'FILL' 1;">pause</b>
+                    <span id="playpause-label" class="hidden sm:inline">Pausa</span>
+                </button>
+
+                <!-- Tiempo restante -->
+                <div class="flex items-center gap-1 md:gap-2 px-2 py-1 md:px-4 md:py-2 text-xs md:text-sm font-bold"
+                    style="border-radius:999px; background:rgba(0,0,0,0.7); color:#dacaa1; border:1px solid rgba(218,202,161,0.4);">
+                    <b class="material-symbols-outlined text-sm md:text-base">timer</b>
+                    <span id="time-remaining">--:--</span>
+                </div>
+            </div>
+
+            <style>
+                @keyframes playPulse {
+                    0%, 100% { transform: scale(1); opacity: 0.4; }
+                    50% { transform: scale(1.18); opacity: 0.1; }
+                }
+                @media (max-width: 639px) {
+                    .play-btn-wrap { width: 76px !important; height: 76px !important; }
+                    .play-btn-icon { font-size: 38px !important; }
+                }
+            </style>
+
+            <script>
+                (function () {
+                    const video    = document.getElementById('hero-video');
+                    const poster   = document.getElementById('hero-poster');
+                    const overlay  = document.getElementById('play-overlay');
+                    const playBg   = document.getElementById('play-bg');
+                    const controls = document.getElementById('video-controls');
+                    const ppBtn    = document.getElementById('playpause-btn');
+                    const ppIcon   = document.getElementById('playpause-icon');
+                    const ppLabel  = document.getElementById('playpause-label');
+
+                    const playLabel = document.getElementById('play-label');
+                    let started = false;
+
+                    // Mostrar vídeo (primer frame) cuando esté disponible
+                    let videoShown = false;
+                    function showVideo() {
+                        if (videoShown) return;
+                        videoShown = true;
+                        video.style.opacity = '1';
+                        poster.style.opacity = '0';
+                        setTimeout(function () { poster.style.display = 'none'; }, 700);
+                    }
+                    // Precarga en desktop; en iOS sólo carga con interacción
+                    if (video.readyState >= 2) {
+                        showVideo();
+                    } else {
+                        video.addEventListener('loadeddata', showVideo, { once: true });
+                        video.addEventListener('canplay', showVideo, { once: true });
+                    }
+                    // Fallback: si no carga en 8s, mostrar igualmente
+                    setTimeout(showVideo, 8000);
+
+                    // El overlay ya es visible desde el inicio — ocultar spinner al cargar
+                    // (en móvil el spinner quedará hasta que el usuario pulse play y cargue el primer frame)
+
+                    // Hover en el overlay
+                    overlay.addEventListener('mouseenter', function () {
+                        playBg.style.background = 'rgba(218,202,161,0.22)';
+                    });
+                    overlay.addEventListener('mouseleave', function () {
+                        playBg.style.background = 'rgba(218,202,161,0.1)';
+                    });
+
+                    // Click en overlay → reproducir
+                    overlay.addEventListener('click', function () {
+                        var playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.then(function () {
+                                // Reproduciendo correctamente
+                                showVideo();
+                                overlay.style.opacity = '0';
+                                overlay.style.pointerEvents = 'none';
+                                ppIcon.textContent = 'pause';
+                                ppLabel.textContent = 'Pausa';
+                                if (!started) { started = true; controls.style.display = 'flex'; }
+                            }).catch(function () {
+                                // play() fue rechazado — dejar overlay visible para segundo intento
+                            });
+                        } else {
+                            // Navegadores sin soporte a promises (muy antiguos)
+                            showVideo();
+                            overlay.style.opacity = '0';
+                            overlay.style.pointerEvents = 'none';
+                            ppIcon.textContent = 'pause';
+                            ppLabel.textContent = 'Pausa';
+                            if (!started) { started = true; controls.style.display = 'flex'; }
+                        }
+                    });
+
+                    // Al finalizar el vídeo → pausar y mostrar overlay de nuevo
+                    video.addEventListener('ended', function () {
+                        video.pause();
+                        video.currentTime = 0;
+                        playLabel.textContent = 'Ver de nuevo';
+                        overlay.style.opacity = '1';
+                        overlay.style.pointerEvents = 'auto';
+                        ppIcon.textContent = 'play_arrow';
+                        ppLabel.textContent = 'Reproducir';
+                    });
+
+                    // Mostrar modal de formulario al llegar al 95% del vídeo
+                    var modalShown = false;
+
+                    // Hash de depuración: #90 → salta al 90% cuando el vídeo esté listo
+                    var hashPct = parseInt(window.location.hash.replace('#', ''));
+                    if (!isNaN(hashPct) && hashPct > 0 && hashPct <= 100) {
+                        video.addEventListener('canplay', function seekToHash() {
+                            video.currentTime = video.duration * (hashPct / 100);
+                            video.removeEventListener('canplay', seekToHash);
+                        });
+                    }
+                    video.addEventListener('timeupdate', function () {
+                        // Actualizar tiempo restante
+                        if (video.duration) {
+                            var remaining = Math.max(0, Math.ceil(video.duration - video.currentTime));
+                            var m = Math.floor(remaining / 60);
+                            var s = remaining % 60;
+                            document.getElementById('time-remaining').textContent =
+                                m > 0 ? (m + ':' + (s < 10 ? '0' + s : s)) : (s + 's');
+                        }
+                        // Trigger modal al 95%
+                        if (!modalShown && video.duration && (video.currentTime / video.duration) >= 0.95) {
+                            modalShown = true;
+                            document.getElementById('form-modal').style.display = 'flex';
+                        }
+                    });
+
+                    // Botón play/pausa en controles
+                    ppBtn.addEventListener('click', function () {
+                        if (video.paused) {
+                            video.play();
+                            overlay.style.opacity = '0';
+                            overlay.style.pointerEvents = 'none';
+                            ppIcon.textContent = 'pause';
+                            ppLabel.textContent = 'Pausa';
+                        } else {
+                            video.pause();
+                            playLabel.textContent = 'Reproducir vídeo';
+                            overlay.style.opacity = '1';
+                            overlay.style.pointerEvents = 'auto';
+                            ppIcon.textContent = 'play_arrow';
+                            ppLabel.textContent = 'Reproducir';
+                        }
+                    });
+
+                    // Hover en botón de control
+                    ppBtn.addEventListener('mouseenter', function () {
+                        ppBtn.style.background = 'rgba(218,202,161,0.25)';
+                        ppBtn.style.color = '#ffffff';
+                    });
+                    ppBtn.addEventListener('mouseleave', function () {
+                        ppBtn.style.background = 'rgba(0,0,0,0.7)';
+                        ppBtn.style.color = '#dacaa1';
+                    });
+                })();
+            </script>
         </section>
         <!-- Infinite CTA Marquee -->
         <style>
@@ -202,237 +399,278 @@
             <div class="animate-scroll hover:[animation-play-state:paused]">
                 <!-- Group 1 -->
                 <div class="flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
-                    <h2 style="word-spacing: 4px;"
-                        class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
-                        Si estás listo para tomarte esto como un negocio
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                        ¿Golpeas el techo en tu agencia actual?
                     </h2>
-                    <b
-                        class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
-                    <h2
-                        class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
-                        Completa el formulario y hablemos
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-white/80 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)] whitespace-nowrap">
+                        El talento solo no escala — el sistema sí
                     </h2>
-                    <b
-                        class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                        Más captaciones · más cierres · más ingresos
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-white/80 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)] whitespace-nowrap">
+                        Sin techo de comisiones · sin límite de crecimiento
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
                 </div>
-                <!-- Group 2 -->
+                <!-- Group 2 (duplicado para scroll infinito) -->
                 <div class="flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
-                    <h2
-                        class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
-                        Si estás listo para tomarte esto como un negocio
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                        ¿Golpeas el techo en tu agencia actual?
                     </h2>
-                    <b
-                        class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
-                    <h2
-                        class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
-                        Completa el formulario y hablemos
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-white/80 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)] whitespace-nowrap">
+                        El talento solo no escala — el sistema sí
                     </h2>
-                    <b
-                        class="material-symbols-outlined text-[#beaf87] text-5xl md:text-7xl lg:text-[6rem]">arrow_forward</b>
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase text-[#dacaa1] drop-shadow-[0_0_15px_rgba(218,202,161,0.2)] whitespace-nowrap">
+                        Más captaciones · más cierres · más ingresos
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
+                    <h2 class="text-xl md:text-3xl lg:text-[3rem] font-headline font-extrabold uppercase tracking-tighter text-white/80 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)] whitespace-nowrap">
+                        Sin techo de comisiones · sin límite de crecimiento
+                    </h2>
+                    <b class="material-symbols-outlined text-[#beaf87] text-3xl md:text-3xl lg:text-[3rem]">arrow_forward</b>
                 </div>
             </div>
         </section>
         <!-- Agent Capture Section -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32 items-center">
-            <div class="space-y-12">
-                <p class="font-headline text-sm font-bold text-[#a1a1a1] uppercase tracking-[0.2em] mb-4">COMPLETA EL
-                    SIGUIENTE FORMULARIO Y...</p>
-                <h2 style="margin: -5px 0 -20px 0;"
-                    class="font-headline uppercase text-4xl md:text-6xl font-extrabold text-primary leading-tight tracking-tight">
-                    Accede a un modelo de negocio <br> <b class="text-[#ffffff]">inmobiliario real</b>
-                </h2>
-                <p class="text-on-surface-variant leading-relaxed text-sm">No estás aplicando a un trabajo.<br>
-                    Estás entrando en un sistema diseñado para producir, escalar y generar ingresos de verdad.</p>
+        <section class="mb-32">
+            <!-- Eyebrow con pasos -->
+            <div class="flex items-center gap-3 mb-8 flex-wrap">
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#dacaa1]">
+                    <span class="w-6 h-6 flex items-center justify-center border border-[#dacaa1]/40 text-[10px] font-extrabold" style="border-radius:50%;">1</span>
+                    Mira el vídeo
+                </div>
+                <b class="material-symbols-outlined text-[#dacaa1]/30 text-lg">arrow_forward</b>
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#dacaa1]">
+                    <span class="w-6 h-6 flex items-center justify-center border border-[#dacaa1]/40 text-[10px] font-extrabold" style="border-radius:50%;">2</span>
+                    Completa el formulario
+                </div>
+                <b class="material-symbols-outlined text-[#dacaa1]/30 text-lg">arrow_forward</b>
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#dacaa1]/50">
+                    <span class="w-6 h-6 flex items-center justify-center border border-[#dacaa1]/20 text-[10px] font-extrabold" style="border-radius:50%;">3</span>
+                    Analizamos tu perfil y concretamos una cita
+                </div>
+            </div>
 
-                <!-- BLOQUES DE VALOR -->
-                <div class="space-y-8">
-                    <div class="flex items-start gap-6">
-                        <div class="bg-surface-container-high p-4 rounded-xl">
-                            <b class="material-symbols-outlined text-primary text-3xl">monitoring</b>
-                        </div>
-                        <div>
-                            <h3 class="font-headline text-xl font-bold text-white mb-2">Sistema de Alto Rendimiento</h3>
-                            <p class="text-on-surface-variant leading-relaxed">Trabajarás con un método probado basado
-                                en datos, estructura y ejecución. Cada acción tiene un objetivo: generar negocio, cerrar
-                                operaciones y aumentar tu facturación.</p>
-                        </div>
+            <!-- Grid: título + píldoras a la izquierda, bloques de valor a la derecha -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <!-- Columna izquierda -->
+                <div class="space-y-6">
+                    <h2 class="font-headline uppercase text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight">
+                        Accede a un modelo de negocio <b class="text-white">inmobiliario real</b>
+                    </h2>
+                    <p class="text-on-surface-variant leading-relaxed">No estás aplicando a un trabajo. Estás entrando en un sistema diseñado para <b class="text-white">producir, escalar y generar ingresos de verdad.</b></p>
+
+                    <!-- Píldoras de prueba social -->
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <span class="flex items-center gap-2 bg-surface-container-high border border-white/5 px-4 py-2 text-xs font-bold text-primary" style="border-radius:999px;">
+                            <b class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">verified</b>
+                            +10 años en el mercado
+                        </span>
+                        <span class="flex items-center gap-2 bg-surface-container-high border border-white/5 px-4 py-2 text-xs font-bold text-primary" style="border-radius:999px;">
+                            <b class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">groups</b>
+                            Agentes activos con resultados
+                        </span>
+                        <span class="flex items-center gap-2 bg-surface-container-high border border-white/5 px-4 py-2 text-xs font-bold text-primary" style="border-radius:999px;">
+                            <b class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</b>
+                            Century 21 · red mundial
+                        </span>
                     </div>
-                    <div class="flex items-start gap-6">
-                        <div class="bg-surface-container-high p-4 rounded-xl">
-                            <b class="material-symbols-outlined text-primary text-3xl">domain</b>
-                        </div>
-                        <div>
-                            <h3 class="font-headline text-xl font-bold text-white mb-2">Construcción de Negocio Propio
-                            </h3>
-                            <p class="text-on-surface-variant leading-relaxed">Aquí no eres un empleado. Construyes tu
-                                cartera, tu posicionamiento en zona y un negocio que crece contigo. Cuanto mejor
-                                ejecutas el sistema, mayor es tu crecimiento.</p>
-                        </div>
+                </div>
+
+                <!-- Columna derecha: bloques de valor en grid 2x2 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="bg-surface-container-high border border-white/5 p-5" style="border-radius:1rem;">
+                        <b class="material-symbols-outlined text-primary text-2xl mb-3 block">monitoring</b>
+                        <h3 class="font-headline font-bold text-white text-base mb-1">Sistema de alto rendimiento</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Método probado basado en datos y ejecución. Sin improvisación.</p>
                     </div>
-                    <div class="flex items-start gap-6">
-                        <div class="bg-surface-container-high p-4 rounded-xl">
-                            <b class="material-symbols-outlined text-primary text-3xl">trending_up</b>
-                        </div>
-                        <div>
-                            <h3 class="font-headline text-xl font-bold text-white mb-2">Ingresos Escalables y Reales
-                            </h3>
-                            <p class="text-on-surface-variant leading-relaxed">No hablamos de comisiones "competitivas".
-                                Hablamos de un modelo que te permite generar ingresos predecibles y crecientes en
-                                función de tu rendimiento.</p>
-                        </div>
+                    <div class="bg-surface-container-high border border-white/5 p-5" style="border-radius:1rem;">
+                        <b class="material-symbols-outlined text-primary text-2xl mb-3 block">domain</b>
+                        <h3 class="font-headline font-bold text-white text-base mb-1">Negocio propio, no empleo</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Construyes tu cartera y tu posicionamiento en zona. Creces con el sistema.</p>
                     </div>
-                    <div class="flex items-start gap-6">
-                        <div class="bg-surface-container-high p-4 rounded-xl">
-                            <b class="material-symbols-outlined text-primary text-3xl">campaign</b>
-                        </div>
-                        <div>
-                            <h3 class="font-headline text-xl font-bold text-white mb-2">Inversión, Marketing y Soporte
-                                Real</h3>
-                            <p class="text-on-surface-variant leading-relaxed">La agencia invierte contigo: visibilidad,
-                                posicionamiento, marketing y estructura operativa. Tú te centras en producir. Nosotros
-                                en multiplicar tu impacto.</p>
-                        </div>
+                    <div class="bg-surface-container-high border border-white/5 p-5" style="border-radius:1rem;">
+                        <b class="material-symbols-outlined text-primary text-2xl mb-3 block">trending_up</b>
+                        <h3 class="font-headline font-bold text-white text-base mb-1">Ingresos escalables y reales</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Sin techo de comisiones. Tu rendimiento determina tu facturación.</p>
+                    </div>
+                    <div class="bg-surface-container-high border border-white/5 p-5" style="border-radius:1rem;">
+                        <b class="material-symbols-outlined text-primary text-2xl mb-3 block">campaign</b>
+                        <h3 class="font-headline font-bold text-white text-base mb-1">Inversión y soporte real</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">La agencia invierte en tu visibilidad y marketing. Tú produces, nosotros multiplicamos.</p>
                     </div>
                 </div>
             </div>
-            <div class="bg-surface-container-low p-8 md:p-12 rounded-2xl border border-white/5 shadow-2xl">
-                <form class="space-y-6">
-
-
-                    <!-- Nombre y apellidos -->
-                    <div class="space-y-1.5">
-                        <label for="full-name"
-                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">Nombre
-                            y apellidos</label>
-                        <input id="full-name" name="full_name" type="text" required
-                            class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
-                            placeholder="Tu nombre completo" />
-                    </div>
-
-                    <!-- Experiencia -->
-                    <div class="space-y-1.5">
-                        <label for="experiencia"
-                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Cuál
-                            es tu experiencia en ventas o sector inmobiliario?</label>
-                        <div class="relative">
-                            <select id="experiencia" name="experiencia" required
-                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
-                                <option value="" disabled selected class="text-on-surface-variant/40">Selecciona una
-                                    opción</option>
-                                <option value="sin-experiencia">Sin experiencia previa</option>
-                                <option value="menos-1">Menos de 1 año</option>
-                                <option value="1-3">Entre 1 y 3 años</option>
-                                <option value="3-5">Entre 3 y 5 años</option>
-                                <option value="mas-5">Más de 5 años</option>
-                            </select>
-                            <b
-                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
-                        </div>
-                    </div>
-
-                    <!-- Inversión -->
-                    <div class="space-y-1.5">
-                        <label for="inversion"
-                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Estás
-                            dispuesto a invertir en tu negocio para crecer más rápido?</label>
-                        <div class="relative">
-                            <select id="inversion" name="inversion" required
-                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
-                                <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="si-decidido">Sí, estoy decidido a invertir</option>
-                                <option value="si-segun">Sí, según el plan de negocio</option>
-                                <option value="no-seguro">No estoy seguro todavía</option>
-                                <option value="no">No por ahora</option>
-                            </select>
-                            <b
-                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
-                        </div>
-                    </div>
-
-                    <!-- Dedicación -->
-                    <div class="space-y-1.5">
-                        <label for="dedicacion"
-                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Cuál
-                            es tu nivel de dedicación previsto?</label>
-                        <div class="relative">
-                            <select id="dedicacion" name="dedicacion" required
-                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
-                                <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="tiempo-completo">Tiempo completo (40+ h/semana)</option>
-                                <option value="media-jornada">Media jornada (20–30 h/semana)</option>
-                                <option value="parcial">Parcial (10–20 h/semana)</option>
-                                <option value="inicio">Empezando a explorar (&lt;10 h/semana)</option>
-                            </select>
-                            <b
-                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
-                        </div>
-                    </div>
-
-                    <!-- Motivación -->
-                    <div class="space-y-1.5">
-                        <label for="motivacion"
-                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Qué
-                            estás buscando realmente en este momento?</label>
-                        <div class="relative">
-                            <select id="motivacion" name="motivacion" required
-                                class="w-full appearance-none bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 pr-11 transition-all cursor-pointer outline-none">
-                                <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="independencia">Independencia económica y profesional</option>
-                                <option value="ingresos-extra">Generar ingresos extra</option>
-                                <option value="cambio-sector">Cambiar de sector y empezar de nuevo</option>
-                                <option value="crecer">Crecer dentro del sector inmobiliario</option>
-                                <option value="emprender">Emprender con respaldo de una marca</option>
-                            </select>
-                            <b
-                                class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary text-xl">expand_more</b>
-                        </div>
-                    </div>
-
-                    <!-- Objetivo de ingresos (opcional) -->
-                    <div class="space-y-1.5">
-                        <label for="objetivo-ingresos"
-                            class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest leading-snug">
-                            ¿Qué objetivo de ingresos te gustaría alcanzar en 12 meses?
-                            <b class="ml-1 normal-case text-on-surface-variant/50 tracking-normal font-normal">(opcional,
-                                recomendado)</b>
-                        </label>
-                        <input id="objetivo-ingresos" name="objetivo_ingresos" type="text"
-                            class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
-                            placeholder="Ej: 40.000 €, 60.000 €..." />
-                    </div>
-
-                    <!-- Email y Teléfono -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="space-y-1.5">
-                            <label for="email"
-                                class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">Email
-                                profesional</label>
-                            <input id="email" name="email" type="email" required
-                                class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
-                                placeholder="email@ejemplo.com" />
-                        </div>
-                        <div class="space-y-1.5">
-                            <label for="telefono"
-                                class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest leading-snug">
-                                Teléfono
-                                <b class="ml-0.5 normal-case text-on-surface-variant/50 tracking-normal font-normal">(WhatsApp
-                                    preferente)</b>
-                            </label>
-                            <input id="telefono" name="telefono" type="tel" required
-                                class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
-                                placeholder="+34 000 000 000" />
-                        </div>
-                    </div>
-
-                    <!-- Submit -->
-                    <button
-                        class="w-full gold-button-gradient text-on-primary font-headline font-extrabold text-base py-4 rounded-xl uppercase tracking-widest shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:brightness-110 transition-all duration-300 transform active:scale-[0.98] mt-auto"
-                        type="submit">
-                        ENVIAR SOLICITUD
-                    </button>
-                </form>
-            </div>
         </section>
+        <style>
+            /* Eliminar flecha nativa de los selects */
+            select,
+            select.appearance-none {
+                -webkit-appearance: none !important;
+                -moz-appearance: none !important;
+                appearance: none !important;
+                background-image: none !important;
+            }
+            select::-ms-expand { display: none !important; }
+
+            /* Scrollbar dorado para el modal */
+            #form-modal ::-webkit-scrollbar { width: 6px; }
+            #form-modal ::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-radius: 999px; }
+            #form-modal ::-webkit-scrollbar-thumb { background: rgba(218,202,161,0.35); border-radius: 999px; }
+            #form-modal ::-webkit-scrollbar-thumb:hover { background: rgba(218,202,161,0.6); }
+        </style>
+        <!-- Modal Formulario (aparece al 90% del vídeo) -->
+        <div id="form-modal"
+            class="fixed inset-0 z-50 items-center justify-center p-4 md:p-8"
+            style="display:none; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px);">
+            <div class="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-surface-container-low border border-white/10 shadow-2xl"
+                style="border-radius:1.5rem;">
+                <!-- Cabecera modal -->
+                <div class="sticky top-0 bg-surface-container-low border-b border-white/5 px-8 pt-8 pb-5 flex items-start justify-between" style="border-radius:1.5rem 1.5rem 0 0; z-index:10;">
+                    <div>
+                        <p class="text-primary text-xs font-bold uppercase tracking-[0.3em] mb-1">Primer paso</p>
+                        <h3 class="font-headline text-2xl md:text-3xl font-extrabold text-white leading-tight">Déjanos tus datos</h3>
+                        <p class="text-on-surface-variant text-sm mt-1">Analizaremos tu perfil y luego te enviaremos un email para generar una reunión.</p>
+                    </div>
+                    <button onclick="document.getElementById('form-modal').style.display='none'"
+                        class="text-on-surface-variant hover:text-white transition-colors ml-4 mt-1 flex-shrink-0">
+                        <b class="material-symbols-outlined text-2xl">close</b>
+                    </button>
+                </div>
+                <!-- Formulario -->
+                <div class="p-8">
+                    <form id="modal-form" class="space-y-5">
+                        <div class="space-y-1.5">
+                            <label for="full-name" class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">Nombre y apellidos</label>
+                            <input id="full-name" name="full_name" type="text" required
+                                class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                                placeholder="Tu nombre completo" />
+                        </div>
+
+                        <!-- Custom selects -->
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Cuál es tu experiencia en ventas o sector inmobiliario?</label>
+                            <div class="cselect" data-name="experiencia" data-required="true">
+                                <div class="cselect-options">
+                                    <div data-value="sin-experiencia">Sin experiencia previa</div>
+                                    <div data-value="menos-1">Menos de 1 año</div>
+                                    <div data-value="1-3">Entre 1 y 3 años</div>
+                                    <div data-value="3-5">Entre 3 y 5 años</div>
+                                    <div data-value="mas-5">Más de 5 años</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Estás dispuesto a invertir en tu negocio para crecer más rápido?</label>
+                            <div class="cselect" data-name="inversion" data-required="true">
+                                <div class="cselect-options">
+                                    <div data-value="si-decidido">Sí, estoy decidido a invertir</div>
+                                    <div data-value="si-segun">Sí, según el plan de negocio</div>
+                                    <div data-value="no-seguro">No estoy seguro todavía</div>
+                                    <div data-value="no">No por ahora</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Cuál es tu nivel de dedicación previsto?</label>
+                            <div class="cselect" data-name="dedicacion" data-required="true">
+                                <div class="cselect-options">
+                                    <div data-value="tiempo-completo">Tiempo completo (40+ h/semana)</div>
+                                    <div data-value="media-jornada">Media jornada (20–30 h/semana)</div>
+                                    <div data-value="parcial">Parcial (10–20 h/semana)</div>
+                                    <div data-value="inicio">Empezando a explorar (&lt;10 h/semana)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿Qué estás buscando realmente en este momento?</label>
+                            <div class="cselect" data-name="motivacion" data-required="true">
+                                <div class="cselect-options">
+                                    <div data-value="independencia">Independencia económica y profesional</div>
+                                    <div data-value="ingresos-extra">Generar ingresos extra</div>
+                                    <div data-value="cambio-sector">Cambiar de sector y empezar de nuevo</div>
+                                    <div data-value="crecer">Crecer dentro del sector inmobiliario</div>
+                                    <div data-value="emprender">Emprender con respaldo de una marca</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">¿En qué zona de Valencia resides?</label>
+                            <div class="cselect" data-name="zona" data-required="true">
+                                <div class="cselect-options">
+                                    <div data-value="ciutat-vella">Ciutat Vella</div>
+                                    <div data-value="eixample">L'Eixample</div>
+                                    <div data-value="extramurs">Extramurs</div>
+                                    <div data-value="campanar">Campanar</div>
+                                    <div data-value="la-saidia">La Saïdia</div>
+                                    <div data-value="el-pla-del-real">El Pla del Real</div>
+                                    <div data-value="lolivereta">L'Olivereta</div>
+                                    <div data-value="patraix">Patraix</div>
+                                    <div data-value="jesus">Jesús</div>
+                                    <div data-value="quatre-carreres">Quatre Carreres</div>
+                                    <div data-value="poblats-maritims">Poblats Marítims (Cabanyal, Malvarrosa...)</div>
+                                    <div data-value="camins-al-grau">Camins al Grau</div>
+                                    <div data-value="algiros">Algirós</div>
+                                    <div data-value="benimaclet">Benimaclet</div>
+                                    <div data-value="rascanya">Rascanya</div>
+                                    <div data-value="benicalap">Benicalap</div>
+                                    <div data-value="pobles-del-nord">Pobles del Nord</div>
+                                    <div data-value="pobles-de-louest">Pobles de l'Oest</div>
+                                    <div data-value="pobles-del-sud">Pobles del Sud</div>
+                                    <div data-value="fuera-valencia">Fuera de Valencia</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label for="objetivo-ingresos" class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest leading-snug">
+                                ¿Qué objetivo de ingresos te gustaría alcanzar en 12 meses?
+                                <b class="ml-1 normal-case text-on-surface-variant/50 tracking-normal font-normal">(opcional)</b>
+                            </label>
+                            <input id="objetivo-ingresos" name="objetivo_ingresos" type="text"
+                                class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                                placeholder="Ej: 40.000 €, 60.000 €..." />
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label for="email" class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest">Email profesional</label>
+                                <input id="email" name="email" type="email" required
+                                    class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                                    placeholder="email@ejemplo.com" />
+                            </div>
+                            <div class="space-y-1.5">
+                                <label for="telefono" class="block text-xs font-semibold text-on-surface-variant/80 uppercase tracking-widest leading-snug">
+                                    Teléfono <b class="ml-0.5 normal-case text-on-surface-variant/50 tracking-normal font-normal">(WhatsApp)</b>
+                                </label>
+                                <input id="telefono" name="telefono" type="tel" required
+                                    class="w-full bg-surface-container-highest border border-white/5 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-white py-3.5 px-5 placeholder-on-surface-variant/40 transition-all outline-none"
+                                    placeholder="+34 000 000 000" />
+                            </div>
+                        </div>
+                        <button class="w-full gold-button-gradient text-on-primary font-headline font-extrabold text-base py-4 rounded-xl uppercase tracking-widest shadow-lg shadow-primary/20 hover:brightness-110 transition-all duration-300 active:scale-[0.98]" type="submit" id="modal-submit-btn">
+                            ENVIAR MIS DATOS
+                        </button>
+                    </form>
+
+                    <!-- Mensaje de éxito (oculto hasta envío) -->
+                    <div id="modal-success" class="hidden flex-col items-center text-center gap-6 py-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 border border-primary/30" style="border-radius:50%;">
+                            <b class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">mark_email_read</b>
+                        </div>
+                        <div>
+                            <h4 class="font-headline text-2xl font-extrabold text-white mb-2">¡Datos recibidos!</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Analizaremos tu perfil y te responderemos a la brevedad por email para coordinar una cita.</p>
+                        </div>
+                        <button onclick="document.getElementById('form-modal').style.display='none'" class="px-8 py-3 border border-primary/40 text-primary text-sm font-bold uppercase tracking-widest hover:bg-primary/10 transition-all" style="border-radius:999px;">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Our Values Slider & Bento Section -->
         <section class="mb-32" id="ventajas">
             <div class="bg-surface-container-low rounded-[2rem] p-8 md:p-20 overflow-hidden relative">
@@ -446,6 +684,12 @@
 
                 <!-- Slider Wrapper -->
                 <div class="relative" id="slider-section">
+                    <!-- Dot indicators (arriba) -->
+                    <div class="flex gap-3 mb-6" id="slider-dots">
+                        <button id="dot-0" class="w-10 h-1 rounded-full bg-primary transition-all duration-300" aria-label="Slide 1"></button>
+                        <button id="dot-1" class="w-4 h-1 rounded-full bg-white/20 transition-all duration-300" aria-label="Slide 2"></button>
+                        <button id="dot-2" class="w-4 h-1 rounded-full bg-white/20 transition-all duration-300" aria-label="Slide 3"></button>
+                    </div>
                     <!-- Slides Container -->
                     <div class="overflow-hidden rounded-2xl" id="slides-container">
                         <div class="flex transition-transform duration-700 ease-in-out" id="slides-track">
@@ -457,7 +701,7 @@
                                     class="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-2xl flex-shrink-0">
                                     <img alt="Century 21 branding luxury office environment with gold logo"
                                         class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2s]"
-                                        src="/img/21.webp" />
+                                        src="img/21.webp" />
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                         <div class="absolute bottom-6 left-6">
@@ -473,11 +717,11 @@
                                         <b class="material-symbols-outlined text-primary text-lg"
                                             style="font-variation-settings:'FILL' 1;">verified</b>
                                         <span class="text-primary text-xs font-bold uppercase tracking-widest">Autoridad
-                                            de Marca</span>
+                                            de marca</span>
                                     </div>
                                     <h3
                                         class="font-headline text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                                        Autoridad que Genera Cierres: <b class="text-primary">El Poder de la Marca</b>
+                                        Autoridad que genera cierres: <b class="text-primary">el poder de la marca</b>
                                     </h3>
                                     <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
                                         ¿Tu marca personal necesita un impulso? Muchos agentes luchan por ganar la
@@ -500,7 +744,7 @@
                                     class="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-2xl flex-shrink-0">
                                     <img alt="Premium real estate portfolio investment banking financial district"
                                         class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2s]"
-                                        src="/img/2.webp" />
+                                        src="img/libro.webp" />
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                         <div class="absolute bottom-6 left-6">
@@ -516,15 +760,15 @@
                                         <b class="material-symbols-outlined text-primary text-lg"
                                             style="font-variation-settings:'FILL' 1;">domain</b>
                                         <span class="text-primary text-xs font-bold uppercase tracking-widest">Nicho
-                                            Exclusivo</span>
+                                            exclusivo</span>
                                     </div>
                                     <h3
                                         class="font-headline text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                                        Diferenciación Real: <b class="text-primary">Activos Bancarios</b>
+                                        Diferenciación real: <b class="text-primary">activos bancarios</b>
                                     </h3>
                                     <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
                                         ¿Cansado de competir por las mismas viviendas de siempre? En <b
-                                            class="text-white">Garfisan Valencia SL</b>, te sacamos de la guerra de
+                                            class="text-white">Liberty Home</b>, te sacamos de la guerra de
                                         precios del mercado residencial común. Te formamos y damos acceso exclusivo a la
                                         gestión de activos bancarios y portfolios de inversión.
                                     </p>
@@ -543,7 +787,7 @@
                                     class="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-2xl flex-shrink-0">
                                     <img alt="Modern tech-enabled real estate office with team support and digital tools"
                                         class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[2s]"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvI05J9i_g7-17DGN09JoNkBTxy8NCFhrsYlNblcXUUO4kRIDVL8_QDAikvd2_-j933IACCb2a1ZVIbR3-vUGgVsEe8d9JYysMivpo11WkHrOrdpJU3d8VXsRq5STsC7eD4OQmRBhrIrkMbqSt5u6L75wdIxCdbLx9ojQG0WRVDUSJiBNM1L7vytzjKpOKTD8TD5FSPnJ3uKusgLTJuokiiXhKXGjEb5xixqaZFUAvaHe6BFi0MmmxiN9_VJyAkek4-2FKud9MdE" />
+                                        src="img/equipo.webp" />
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                         <div class="absolute bottom-6 left-6">
@@ -560,11 +804,11 @@
                                             style="font-variation-settings:'FILL' 1;">rocket_launch</b>
                                         <span
                                             class="text-primary text-xs font-bold uppercase tracking-widest">Ecosistema
-                                            de Éxito</span>
+                                            de éxito</span>
                                     </div>
                                     <h3
                                         class="font-headline text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                                        Infraestructura de Éxito: <b class="text-primary">Tu Negocio, Sin Cargas</b>
+                                        Infraestructura de éxito: <b class="text-primary">tu negocio, sin cargas</b>
                                     </h3>
                                     <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
                                         ¿Sientes que el papeleo te quita tiempo para vender? En <b
@@ -583,16 +827,7 @@
                     </div><!-- end slides-container -->
 
                     <!-- Navigation Controls -->
-                    <div class="flex items-center justify-between mt-10">
-                        <!-- Dot indicators -->
-                        <div class="flex gap-3" id="slider-dots">
-                            <button id="dot-0" class="w-10 h-1 rounded-full bg-primary transition-all duration-300"
-                                aria-label="Slide 1"></button>
-                            <button id="dot-1" class="w-4 h-1 rounded-full bg-white/20 transition-all duration-300"
-                                aria-label="Slide 2"></button>
-                            <button id="dot-2" class="w-4 h-1 rounded-full bg-white/20 transition-all duration-300"
-                                aria-label="Slide 3"></button>
-                        </div>
+                    <div class="flex items-center justify-end mt-10">
                         <!-- Arrow buttons -->
                         <div class="flex gap-4">
                             <button id="slider-prev"
@@ -640,7 +875,7 @@
                                 <b
                                     class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">campaign</b>
                             </div>
-                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Inversión en tu Negocio
+                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Inversión en tu negocio
                             </h4>
                             <p class="text-primary text-xs font-bold uppercase tracking-widest mb-4">No empiezas solo.
                                 Empiezas con ventaja.</p>
@@ -673,7 +908,7 @@
                                 <b
                                     class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">trending_up</b>
                             </div>
-                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Entorno de Alto Rendimiento
+                            <h4 class="font-headline font-extrabold text-lg text-white mb-1">Entorno de alto rendimiento
                             </h4>
                             <p class="text-primary text-xs font-bold uppercase tracking-widest mb-4">El nivel sube
                                 porque el entorno lo exige.</p>
@@ -1034,8 +1269,175 @@
     <footer class="w-full py-16 flex flex-col items-center justify-center bg-background border-t border-white/5">
         <img alt="Century 21 Logo"
             class="opacity-60 hover:opacity-100 transition-opacity duration-500 grayscale brightness-200 h-12 md:h-16"
-            src="/img/logo_century_21.webp.png" />
+            src="img/logo_century_21.webp.png" />
     </footer>
+
+    <style>
+        /* Custom select */
+        .cselect { position: relative; user-select: none; }
+        .cselect-trigger {
+            display: flex; align-items: center; justify-content: space-between;
+            background: #2a2a2b; border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 0.75rem; padding: 14px 20px; cursor: pointer;
+            color: rgba(205,198,184,0.4); font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+        .cselect.has-value .cselect-trigger { color: #e4e2e3; }
+        .cselect.open .cselect-trigger { border-color: #dacaa1; color: #e4e2e3; }
+        .cselect-trigger .cselect-arrow {
+            font-size: 1.25rem; color: #dacaa1;
+            transition: transform 0.3s;
+            font-family: 'Material Symbols Outlined';
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .cselect.open .cselect-arrow { transform: rotate(180deg); }
+        .cselect-dropdown {
+            display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+            background: #2a2a2b; border: 1px solid rgba(218,202,161,0.2);
+            border-radius: 0.75rem; overflow: hidden; z-index: 100;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+        }
+        .cselect.open .cselect-dropdown { display: block; }
+        .cselect-options { max-height: 220px; overflow-y: auto; }
+        .cselect-options::-webkit-scrollbar { width: 4px; }
+        .cselect-options::-webkit-scrollbar-thumb { background: rgba(218,202,161,0.3); border-radius: 999px; }
+        .cselect-item {
+            padding: 12px 20px; color: #cdc6b8; font-size: 0.9rem; cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+        .cselect-item:hover { background: rgba(218,202,161,0.1); color: #dacaa1; }
+        .cselect-item.selected { color: #dacaa1; font-weight: 600; background: rgba(218,202,161,0.08); }
+        .cselect-item + .cselect-item { border-top: 1px solid rgba(255,255,255,0.04); }
+    </style>
+
+    <script>
+        (function () {
+            function initCSelects() {
+                document.querySelectorAll('.cselect').forEach(function (el) {
+                    if (el.dataset.init) return;
+                    el.dataset.init = '1';
+
+                    var name = el.dataset.name;
+                    var options = el.querySelectorAll('.cselect-options > div');
+                    var hidden = document.createElement('input');
+                    hidden.type = 'hidden'; hidden.name = name;
+                    if (el.dataset.required) hidden.required = true;
+                    el.appendChild(hidden);
+
+                    var trigger = document.createElement('div');
+                    trigger.className = 'cselect-trigger';
+                    trigger.innerHTML = '<span class="cselect-label">Selecciona una opción</span><span class="cselect-arrow">expand_more</span>';
+
+                    var dropdown = document.createElement('div');
+                    dropdown.className = 'cselect-dropdown';
+                    var optWrap = el.querySelector('.cselect-options');
+                    optWrap.querySelectorAll('div').forEach(function (opt) {
+                        var item = document.createElement('div');
+                        item.className = 'cselect-item';
+                        item.textContent = opt.textContent;
+                        item.dataset.value = opt.dataset.value;
+                        item.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            optWrap.querySelectorAll('.cselect-item').forEach(function (i) { i.classList.remove('selected'); });
+                            item.classList.add('selected');
+                            trigger.querySelector('.cselect-label').textContent = item.textContent;
+                            hidden.value = item.dataset.value;
+                            el.classList.remove('open');
+                            el.classList.add('has-value');
+                        });
+                        optWrap.appendChild(item);
+                        opt.remove();
+                    });
+                    dropdown.appendChild(optWrap);
+
+                    el.insertBefore(trigger, el.firstChild);
+                    el.appendChild(dropdown);
+
+                    trigger.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        var isOpen = el.classList.contains('open');
+                        document.querySelectorAll('.cselect.open').forEach(function (o) { o.classList.remove('open'); });
+                        if (!isOpen) el.classList.add('open');
+                    });
+                });
+
+                document.addEventListener('click', function () {
+                    document.querySelectorAll('.cselect.open').forEach(function (o) { o.classList.remove('open'); });
+                });
+            }
+
+            // Inicializar cuando el modal sea visible
+            var modal = document.getElementById('form-modal');
+            var observer = new MutationObserver(function () {
+                if (modal.style.display !== 'none') initCSelects();
+            });
+            observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+            // Validación y envío al webhook de Make
+            document.getElementById('modal-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Validar campos nativos
+                var fields = this.querySelectorAll('input[required], input[type="email"]');
+                var valid = true;
+                fields.forEach(function (f) {
+                    if (f.validity.valueMissing) {
+                        f.setCustomValidity('Este campo es obligatorio.');
+                        valid = false;
+                    } else if (f.validity.typeMismatch && f.type === 'email') {
+                        f.setCustomValidity('Introduce una dirección de email válida.');
+                        valid = false;
+                    } else {
+                        f.setCustomValidity('');
+                    }
+                });
+                // Validar custom selects
+                var hiddens = document.querySelectorAll('#modal-form input[type="hidden"][required]');
+                hiddens.forEach(function (h) {
+                    if (!h.value) {
+                        h.setCustomValidity('Selecciona una opción.');
+                        valid = false;
+                    } else {
+                        h.setCustomValidity('');
+                    }
+                });
+
+                if (!this.checkValidity()) { this.reportValidity(); return; }
+
+                // Recoger datos del formulario
+                var formData = new FormData(this);
+                var data = {};
+                formData.forEach(function (v, k) { data[k] = v; });
+
+                // Deshabilitar botón y mostrar estado de envío
+                var btn = document.getElementById('modal-submit-btn');
+                btn.disabled = true;
+                btn.textContent = 'Enviando...';
+
+                fetch('https://hook.eu1.make.com/bh3f14dingbrqi2i7uxmqp7t4gsu1bmb', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                .then(function () {
+                    document.getElementById('modal-form').style.display = 'none';
+                    var success = document.getElementById('modal-success');
+                    success.classList.remove('hidden');
+                    success.classList.add('flex');
+                })
+                .catch(function () {
+                    btn.disabled = false;
+                    btn.textContent = 'ENVIAR MIS DATOS';
+                    alert('Hubo un error al enviar. Por favor inténtalo de nuevo.');
+                });
+            });
+            // Limpiar mensaje al escribir
+            document.getElementById('modal-form').addEventListener('input', function (e) {
+                if (e.target.setCustomValidity) e.target.setCustomValidity('');
+            });
+
+            initCSelects();
+        })();
+    </script>
 </body>
 
 </html>
