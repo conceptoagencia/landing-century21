@@ -37,6 +37,22 @@ Tienes dos caminos recomendados:
    ```
 3. Añadir colaborador (`Settings > Collaborators > Add people`) con el usuario `TobiasArmiento` o el email `tobiasarmiento555@gmail.com`.
 
+## Despliegue automatizado (GitHub Actions)
+Al hacer merge a `main` se dispara un workflow que sube el sitio por SFTP al servidor de producción.
+
+Workflow: `.github/workflows/deploy.yml`.
+
+Configura los siguientes Secrets en GitHub (`Settings > Secrets and variables > Actions > New repository secret`):
+- `SFTP_HOST` → access-5020106982.webspace-host.com
+- `SFTP_PORT` → 22
+- `SFTP_USER` → su714186
+- `SFTP_PASS` → (la contraseña; no la subas al repo)
+- `SFTP_REMOTE_PATH` → public/lp
+
+Notas:
+- El despliegue excluye `.git`, `.github`, `node_modules`, `trash`, `.vscode` y `*.mp4`.
+- Si necesitas desplegar el vídeo, súbelo manualmente por SFTP o usa un CDN y cambia la `src` del `<video>`.
+
 ## Notas
 - El historial se limpió localmente del último commit y se añadió `.gitignore` para excluir vídeos.
 - Si necesitas versionar videos, usa Git LFS en lugar de ignorarlos.

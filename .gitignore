@@ -4,3 +4,7 @@ landing.mp4
 *.mov
 *.avi
 *.mkv
+
+# Editor y archivos locales
+.vscode/
+.vscode/sftp.json
