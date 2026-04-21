@@ -1,0 +1,8 @@
+# Redirige dominio sin www a dominio con www, preservando esquema y ruta
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Coincide solo con dominios de segundo nivel (ej: dominio.tld)
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteCond %{HTTP_HOST} ^([^.]+\.[^.]+)$ [NC]
+  RewriteRule ^ %{REQUEST_SCHEME}://www.%1%{REQUEST_URI} [R=301,L]
+</IfModule>
