@@ -1,0 +1,52 @@
+# Century 21 Liberty Home — Landing
+
+Proyecto estático (HTML/CSS/JS) con Tailwind CDN. Incluye formulario conectado a Make y un video local `landing.mp4` que está ignorado en Git.
+
+## Estructura
+- `index.html`: Landing principal (vídeo, sliders, modal con formulario)
+- `email_template.html`, `email_template2.html`: Plantillas de email
+- `img/`: Activos de imágenes (webp/png)
+- `.gitignore`: Excluye `landing.mp4` y formatos de vídeo para mantener el repo liviano
+
+## Desarrollo local
+- Abrir `index.html` en el navegador.
+- Tailwind se carga por CDN; no requiere build.
+- El formulario envía a Make (webhook en el propio `index.html`).
+
+## Vídeo (`landing.mp4`)
+- Está ignorado por Git para no inflar el repositorio.
+- Para producción, súbelo a tu hosting/CDN y cambia `src` del `<video id="hero-video">` por su URL pública.
+
+## Compartir con otro desarrollador
+Tienes dos caminos recomendados:
+
+### A) Rama + Pull Request en el remoto actual
+1. Crear rama de trabajo y pushear:
+   ```bash
+   git checkout -b feat/sin-videos
+   git push -u origin feat/sin-videos
+   ```
+2. Crear Pull Request hacia `main` en GitHub.
+
+### B) Nuevo repositorio bajo tu cuenta
+1. Crear repo vacío en tu cuenta (sin README/Licencia).
+2. Cambiar el remoto y subir `main`:
+   ```bash
+   git remote set-url origin https://github.com/<tu-usuario>/<nuevo-repo>.git
+   git push -u origin main
+   ```
+3. Añadir colaborador (`Settings > Collaborators > Add people`) con el usuario `TobiasArmiento` o el email `tobiasarmiento555@gmail.com`.
+
+## Notas
+- El historial se limpió localmente del último commit y se añadió `.gitignore` para excluir vídeos.
+- Si necesitas versionar videos, usa Git LFS en lugar de ignorarlos.
+
+## LFS (opcional)
+```bash
+git lfs install
+git lfs track "*.mp4" "*.mov"
+git add .gitattributes
+git commit -m "track videos via LFS"
+# Migración del historial (avanzado)
+# git lfs migrate import --include="*.mp4,*.mov" --everything
+```
