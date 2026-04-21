@@ -16,20 +16,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Preparar carpeta de despliegue (excluir archivos)
+        run: |
+          mkdir -p deploy_dist
+          rsync -av --delete \
+            --exclude='.git*' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='trash/' \
+            --exclude='.vscode/' \
+            --exclude='*.mp4' \
+            ./ deploy_dist/
+
       - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.SFTP_HOST }}
+          port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
-          protocol: sftp
-          port: ${{ secrets.SFTP_PORT }}
-          local-dir: ./
-          server-dir: ${{ secrets.SFTP_REMOTE_PATH }}/
-          exclude: |
-            **/.git*
-            **/.github/**
-            **/node_modules/**
-            **/trash/**
-            **/.vscode/**
-            **/*.mp4
+          local_path: './deploy_dist'
+          remote_path: ${{ secrets.SFTP_REMOTE_PATH }}
+          sftp_only: true
