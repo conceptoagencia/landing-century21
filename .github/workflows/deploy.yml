@@ -16,6 +16,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar CSS de Tailwind
+        run: npm run build:css
+
       - name: Preparar carpeta de despliegue (excluir archivos)
         run: |
           mkdir -p deploy_dist
