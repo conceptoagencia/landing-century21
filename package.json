@@ -2,8 +2,8 @@
   "name": "liberty-home-landing",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -c tailwind.config.js -i ./styles/tailwind.input.css -o ./styles/tailwind.css --minify",
-    "watch:css": "tailwindcss -c tailwind.config.js -i ./styles/tailwind.input.css -o ./styles/tailwind.css --watch"
+    "build:css": "tailwindcss -c tailwind.config.js -i ./styles/tailwind.input.css -o ./tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i ./styles/tailwind.input.css -o ./tailwind.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"

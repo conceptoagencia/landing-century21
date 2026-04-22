@@ -5,9 +5,9 @@ Proyecto estático (HTML/CSS/JS) con Tailwind compilado en local. Incluye formul
 ## Estructura
 - `index.html`: Landing principal (vídeo, sliders, modal con formulario)
 - `email_template.html`, `email_template2.html`: Plantillas de email
+- `tailwind.css`: CSS compilado y minificado que consume la landing en producción
 - `img/`: Activos de imágenes (webp/png)
 - `styles/tailwind.input.css`: Entrada de Tailwind
-- `styles/tailwind.css`: CSS compilado y minificado que consume la landing
 - `tailwind.config.js`: Tokens y theme extend de Tailwind
 - `package.json`: Scripts de compilación CSS
 - `.gitignore`: Excluye `landing.mp4` y formatos de vídeo para mantener el repo liviano
