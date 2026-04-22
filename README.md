@@ -1,16 +1,22 @@
 # Century 21 Liberty Home — Landing
 
-Proyecto estático (HTML/CSS/JS) con Tailwind CDN. Incluye formulario conectado a Make y un video local `landing.mp4` que está ignorado en Git.
+Proyecto estático (HTML/CSS/JS) con Tailwind compilado en local. Incluye formulario conectado a Make y un video local `landing.mp4` que está ignorado en Git.
 
 ## Estructura
 - `index.html`: Landing principal (vídeo, sliders, modal con formulario)
 - `email_template.html`, `email_template2.html`: Plantillas de email
 - `img/`: Activos de imágenes (webp/png)
+- `styles/tailwind.input.css`: Entrada de Tailwind
+- `styles/tailwind.css`: CSS compilado y minificado que consume la landing
+- `tailwind.config.js`: Tokens y theme extend de Tailwind
+- `package.json`: Scripts de compilación CSS
 - `.gitignore`: Excluye `landing.mp4` y formatos de vídeo para mantener el repo liviano
 
 ## Desarrollo local
 - Abrir `index.html` en el navegador.
-- Tailwind se carga por CDN; no requiere build.
+- Instalar dependencias con `npm install`.
+- Generar CSS con `npm run build:css`.
+- Si vas a iterar estilos, usar `npm run watch:css`.
 - El formulario envía a Make (webhook en el propio `index.html`).
 
 ## Vídeo (`landing.mp4`)

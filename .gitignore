@@ -8,3 +8,6 @@ landing.mp4
 # Editor y archivos locales
 .vscode/
 .vscode/sftp.json
+
+# Dependencias de build local
+node_modules/
