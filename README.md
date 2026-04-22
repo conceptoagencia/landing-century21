@@ -4,6 +4,7 @@ Proyecto estático (HTML/CSS/JS) con Tailwind compilado en local. Incluye formul
 
 ## Estructura
 - `index.html`: Landing principal (vídeo, sliders, modal con formulario)
+- `gracias.html`: Página de agradecimiento tras envío correcto del formulario
 - `email_template.html`, `email_template2.html`: Plantillas de email
 - `tailwind.css`: CSS compilado y minificado que consume la landing en producción
 - `img/`: Activos de imágenes (webp/png)
@@ -17,7 +18,7 @@ Proyecto estático (HTML/CSS/JS) con Tailwind compilado en local. Incluye formul
 - Instalar dependencias con `npm install`.
 - Generar CSS con `npm run build:css`.
 - Si vas a iterar estilos, usar `npm run watch:css`.
-- El formulario envía a Make (webhook en el propio `index.html`).
+- El formulario envía a Make (webhook en el propio `index.html`) y redirige a `gracias.html` en caso de éxito.
 
 ## Vídeo (`landing.mp4`)
 - Está ignorado por Git para no inflar el repositorio.

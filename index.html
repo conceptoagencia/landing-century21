@@ -1553,11 +1553,11 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 })
-                .then(function () {
-                    document.getElementById('modal-form').style.display = 'none';
-                    var success = document.getElementById('modal-success');
-                    success.classList.remove('hidden');
-                    success.classList.add('flex');
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Error en el envío');
+                    }
+                    window.location.href = 'gracias.html';
                 })
                 .catch(function () {
                     btn.disabled = false;
