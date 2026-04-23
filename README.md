@@ -20,6 +20,15 @@ Proyecto estático (HTML/CSS/JS) con Tailwind compilado en local. Incluye formul
 - Si vas a iterar estilos, usar `npm run watch:css`.
 - El formulario envía a Make (webhook en el propio `index.html`) y redirige a `gracias.html` en caso de éxito.
 
+## Tracking de campañas (UTM/Meta)
+- El formulario en `index.html` envía al webhook todos los datos planos del formulario, incluyendo 4 campos ocultos para CRM.
+- Los 4 campos ocultos son: `lead_id`, `campaign_id`, `nombre_campana`, `nombre_anuncio`.
+- Se autocompletan desde URL (o `localStorage` si ya venían en una visita anterior):
+  - `lead_id` ← `lead_id`
+   - `campaign_id` ← `campaign_id` o `utm_id`
+  - `nombre_campana` ← `nombre_campana` o `utm_campaign` o `campaign_name`
+  - `nombre_anuncio` ← `nombre_anuncio` o `utm_content` o `ad_name`
+
 ## Vídeo (`landing.mp4`)
 - Está ignorado por Git para no inflar el repositorio.
 - Para producción, súbelo a tu hosting/CDN y cambia `src` del `<video id="hero-video">` por su URL pública.

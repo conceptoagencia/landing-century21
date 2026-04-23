@@ -802,6 +802,12 @@
                                     placeholder="+34 000 000 000" />
                             </div>
                         </div>
+
+                        <input type="hidden" id="lead-id" name="lead_id" value="" />
+                        <input type="hidden" id="campaign-id" name="campaign_id" value="" />
+                        <input type="hidden" id="nombre-campana" name="nombre_campana" value="" />
+                        <input type="hidden" id="nombre-anuncio" name="nombre_anuncio" value="" />
+
                         <button
                             class="w-full gold-button-gradient text-on-primary font-headline font-extrabold text-base py-4 rounded-xl uppercase tracking-widest shadow-lg shadow-primary/20 hover:brightness-110 transition-all duration-300 active:scale-[0.98]"
                             type="submit" id="modal-submit-btn">
@@ -1713,9 +1719,46 @@
                 if (modal.style.display !== 'none') initCSelects();
             });
             observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+
+            function getTrackedValue(keys, fallback) {
+                var params = new URLSearchParams(window.location.search);
+                for (var i = 0; i < keys.length; i++) {
+                    var key = keys[i];
+                    var value = params.get(key);
+                    if (value) {
+                        try { localStorage.setItem('lh_' + key, value); } catch (_) { }
+                        return value;
+                    }
+                    try {
+                        var stored = localStorage.getItem('lh_' + key);
+                        if (stored) return stored;
+                    } catch (_) { }
+                }
+
+                return fallback || '';
+            }
+
+            function setCrmHiddenFields() {
+                var leadId = getTrackedValue(['lead_id'], '');
+                var campaignId = getTrackedValue(['campaign_id', 'utm_id'], '');
+                var nombreCampana = getTrackedValue(['nombre_campana', 'utm_campaign', 'campaign_name'], '');
+                var nombreAnuncio = getTrackedValue(['nombre_anuncio', 'utm_content', 'ad_name'], '');
+
+                var leadInput = document.getElementById('lead-id');
+                var campaignInput = document.getElementById('campaign-id');
+                var campanaInput = document.getElementById('nombre-campana');
+                var anuncioInput = document.getElementById('nombre-anuncio');
+
+                if (leadInput) leadInput.value = leadId;
+                if (campaignInput) campaignInput.value = campaignId;
+                if (campanaInput) campanaInput.value = nombreCampana;
+                if (anuncioInput) anuncioInput.value = nombreAnuncio;
+            }
+
             // Validación y envío al webhook de Make
             document.getElementById('modal-form').addEventListener('submit', function (e) {
                 e.preventDefault();
+                setCrmHiddenFields();
 
                 // Validar campos nativos
                 var fields = this.querySelectorAll('input[required], input[type="email"]');
@@ -1777,6 +1820,7 @@
             });
 
             initCSelects();
+            setCrmHiddenFields();
         })();
     </script>
 </body>
