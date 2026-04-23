@@ -21,11 +21,13 @@ Proyecto estático (HTML/CSS/JS) con Tailwind compilado en local. Incluye formul
 - El formulario envía a Make (webhook en el propio `index.html`) y redirige a `gracias.html` en caso de éxito.
 
 ## Tracking de campañas (UTM/Meta)
-- El formulario en `index.html` envía al webhook todos los datos planos del formulario, incluyendo 4 campos ocultos para CRM.
-- Los 4 campos ocultos son: `lead_id`, `campaign_id`, `nombre_campana`, `nombre_anuncio`.
+- El formulario en `index.html` envía al webhook todos los datos planos del formulario, incluyendo 6 campos ocultos para CRM.
+- Los 6 campos ocultos son: `lead_id`, `campaign_id`, `ad_id`, `created_time`, `nombre_campana`, `nombre_anuncio`.
 - Se autocompletan desde URL (o `localStorage` si ya venían en una visita anterior):
   - `lead_id` ← `lead_id`
    - `campaign_id` ← `campaign_id` o `utm_id`
+   - `ad_id` ← `ad_id`
+   - `created_time` ← `created_time` (fallback: timestamp actual ISO)
   - `nombre_campana` ← `nombre_campana` o `utm_campaign` o `campaign_name`
   - `nombre_anuncio` ← `nombre_anuncio` o `utm_content` o `ad_name`
 

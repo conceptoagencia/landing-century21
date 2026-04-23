@@ -805,6 +805,8 @@
 
                         <input type="hidden" id="lead-id" name="lead_id" value="" />
                         <input type="hidden" id="campaign-id" name="campaign_id" value="" />
+                        <input type="hidden" id="ad-id" name="ad_id" value="" />
+                        <input type="hidden" id="created-time" name="created_time" value="" />
                         <input type="hidden" id="nombre-campana" name="nombre_campana" value="" />
                         <input type="hidden" id="nombre-anuncio" name="nombre_anuncio" value="" />
 
@@ -1741,16 +1743,22 @@
             function setCrmHiddenFields() {
                 var leadId = getTrackedValue(['lead_id'], '');
                 var campaignId = getTrackedValue(['campaign_id', 'utm_id'], '');
+                var adId = getTrackedValue(['ad_id'], '');
+                var createdTime = getTrackedValue(['created_time'], new Date().toISOString());
                 var nombreCampana = getTrackedValue(['nombre_campana', 'utm_campaign', 'campaign_name'], '');
                 var nombreAnuncio = getTrackedValue(['nombre_anuncio', 'utm_content', 'ad_name'], '');
 
                 var leadInput = document.getElementById('lead-id');
                 var campaignInput = document.getElementById('campaign-id');
+                var adInput = document.getElementById('ad-id');
+                var createdTimeInput = document.getElementById('created-time');
                 var campanaInput = document.getElementById('nombre-campana');
                 var anuncioInput = document.getElementById('nombre-anuncio');
 
                 if (leadInput) leadInput.value = leadId;
                 if (campaignInput) campaignInput.value = campaignId;
+                if (adInput) adInput.value = adId;
+                if (createdTimeInput) createdTimeInput.value = createdTime;
                 if (campanaInput) campanaInput.value = nombreCampana;
                 if (anuncioInput) anuncioInput.value = nombreAnuncio;
             }
