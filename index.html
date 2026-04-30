@@ -295,8 +295,20 @@
                         ppLabel.textContent = 'Reproducir';
                     });
 
-                    // Mostrar modal de formulario al llegar al 95% del vídeo
+                    // Mostrar modal de formulario al llegar al 80% del vídeo
+                    // o como fallback a los 10s si el vídeo no se está reproduciendo.
                     var modalShown = false;
+                    function openFormModal() {
+                        if (modalShown) return;
+                        modalShown = true;
+                        document.getElementById('form-modal').style.display = 'flex';
+                    }
+
+                    setTimeout(function () {
+                        if (!modalShown && (video.paused || video.ended)) {
+                            openFormModal();
+                        }
+                    }, 10000);
 
                     // Hash de depuración: #90 → salta al 90% cuando el vídeo esté listo
                     var hashPct = parseInt(window.location.hash.replace('#', ''));
@@ -314,10 +326,9 @@
                             document.getElementById('time-remaining').textContent =
                                 m > 0 ? (m + ':' + (s < 10 ? '0' + s : s)) : (s + 's');
                         }
-                        // Trigger modal al 95%
-                        if (!modalShown && video.duration && (video.currentTime / video.duration) >= 0.95) {
-                            modalShown = true;
-                            document.getElementById('form-modal').style.display = 'flex';
+                        // Trigger modal al 80%
+                        if (!modalShown && video.duration && (video.currentTime / video.duration) >= 0.80) {
+                            openFormModal();
                         }
                     });
 
